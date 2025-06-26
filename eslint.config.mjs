@@ -24,7 +24,7 @@ const eslintConfig = [
 			'no-unused-vars': 'warn',
 
 			'@style/no-trailing-spaces': 'warn',
-
+			'@style/semi': ['warn', 'never'],
 		}
 	}
 ];
