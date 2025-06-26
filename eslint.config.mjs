@@ -19,6 +19,13 @@ const eslintConfig = [
 		plugins: {
 			'@style': stylistic,
 		},
+		languageOptions: {
+			parserOptions: {
+				ecmaFeatures: {
+					jsx: true,
+				},
+			},
+		},
 		rules: {
 			'prefer-const': 'warn',
 			'no-unused-vars': 'warn',
