@@ -1,15 +1,35 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Navigation() {
 	return(
-		<div>
-			<nav className="flex items-center justify-between p-4 bg-gray-800 text-white">
-				<ul className="flex space-x-4">
-					<li><Link href="#projects" className="hover:underline">Projects</Link></li>
-					<li><Link href="#about" className="hover:underline">About</Link></li>
-					<li><Link href="#contact" className="hover:underline">Contact</Link></li>
-				</ul>
-			</nav>
+		<div className="py-12 bg-secondary text-white">
+			<div className="container-md max-h-52 px-20 flex items-center justify-between">
+				<Image
+					src="/controller.webp"
+					alt="logo"
+					className='h-full w-auto'
+					width={50}
+					height={50}
+					blurDataURL="data:..."
+					placeholder="blur" />
+
+				<nav className="flex">
+					<ul className="flex gap-24">
+						<li className="hover-up">
+							<Link href="#projects">Projects</Link>
+						</li>
+
+						<li className="hover-up">
+							<Link href="#about">About</Link>
+						</li>
+
+						<li className="hover-up">
+							<Link href="#contact">Contact</Link>
+						</li>
+					</ul>
+				</nav>
+			</div>
 		</div>
 	)
 }

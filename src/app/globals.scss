@@ -15,31 +15,32 @@
 }
 
 h1 {
-	font-size: 1.8rem;
-	text-transform: uppercase;
+	@apply text-[1.8rem] uppercase;
 }
 
 h2 {
-	font-size: 1.6rem;
+	@apply text-[1.6rem];
 }
 
 h3,
 h4,
 a {
-	font-size: 1.25rem;
+	@apply text-[1.25rem];
 }
 
+
 .container-sm {
-	max-width: 818px;
-	margin-inline: auto;
+	@apply max-w-[818px] mx-auto;
 }
 
 .container-md {
-	max-width: 1020px;
-	margin-inline: auto;
+	@apply max-w-[1020px] mx-auto;
 }
 
 .container-lg {
-	max-width: 1224px;
-	margin-inline: auto;
+	@apply max-w-[1224px] mx-auto;
+}
+
+.hover-up {
+	@apply duration-250 ease-out hover:-translate-y-4;
 }
