@@ -8,8 +8,38 @@
 
 	--spacing: 1px;
 
-	--color-beige: #FFFBDE;
+	--color-white: #FFFBDE;
 	--color-primary: #91C8E4;
 	--color-secondary: #749BC2;
 	--color-dark: #4682A9;
+}
+
+h1 {
+	font-size: 1.8rem;
+	text-transform: uppercase;
+}
+
+h2 {
+	font-size: 1.6rem;
+}
+
+h3,
+h4,
+a {
+	font-size: 1.25rem;
+}
+
+.container-sm {
+	max-width: 818px;
+	margin-inline: auto;
+}
+
+.container-md {
+	max-width: 1020px;
+	margin-inline: auto;
+}
+
+.container-lg {
+	max-width: 1224px;
+	margin-inline: auto;
 }
