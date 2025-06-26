@@ -31,7 +31,9 @@ const eslintConfig = [
 			'no-unused-vars': 'warn',
 
 			'@style/no-trailing-spaces': 'warn',
+			'@style/quotes': [ 'warn', 'single' ],
 			'@style/semi': ['warn', 'never'],
+			'@style/object-curly-spacing': [ 'warn', 'always' ],
 		}
 	}
 ];
