@@ -13,7 +13,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
 	return (
 		<html lang="en" className={ inter.className }>
-			<body className="flex flex-col min-h-screen">
+			<body className="min-h-screen flex flex-col bg-white text-white">
 				<Navigation />
 
 				<main className="flex-1">
