@@ -56,7 +56,6 @@ export default function Navigation() {
 					</nav>
 				</div>
 			</motion.div>
-			<div className="h-64"></div>
 		</>
 	)
 }
