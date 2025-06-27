@@ -1,0 +1,67 @@
+[
+	{
+		"title": "Astronautical",
+		"description": "I created this game using Unity, C# and Photoshop. It is a 2D Pixel-Art-Game comparable to titles like 'Jetpack Joyride'. You can download it for free on Google Play.",
+		"images": [
+			"/astronautical.webp"
+		],
+		"topics": [
+			"Unity",
+			"C#",
+			"Photoshop",
+			"Game Development"
+		],
+		"links": [
+			"https://play.google.com/store/apps/details?id=com.trainpaths.astronautical"
+		]
+	},
+	{
+		"title": "Claimspartner CH",
+		"description": "Early on in my career, I got the chance to work on a project for Claimspartner CH, a swiss insurance company. It was a very interesting to work on a real-world project and I gained a lot of experience.",
+		"images": [
+			"/astronautical.webp"
+		],
+		"topics": [
+			"HTML",
+			"TailwindCSS",
+			"JavaScript",
+			"Frontend Development"
+		],
+		"links": [
+			""
+		]
+	},
+	{
+		"title": "WordPress",
+		"description": "As an Apprentice, I worked on a lot of WordPress projects. I learned how to utilize and create custom themes, Gutenberg blocks and plugins.",
+		"images": [
+			"/astronautical.webp"
+		],
+		"topics": [
+			"WordPress",
+			"PHP",
+			"HTML",
+			"TailwindCSS",
+			"JavaScript",
+			"Fullstack Development"
+		],
+		"links": [
+			""
+		]
+	},
+	{
+		"title": "More Projects",
+		"description": "Over the course of my education, I have worked on many more projects. Some of them are not listed here, but you can find more on my GitHub profile.",
+		"images": [
+			"/astronautical.webp"
+		],
+		"topics": [
+			"GitHub",
+			"Open Source",
+			"Web Development"
+		],
+		"links": [
+			"https://github.com/noahbachmann"
+		]
+	}
+]

@@ -32,6 +32,10 @@ a {
 	@apply text-[1.25rem];
 }
 
+h1,
+h3 {
+	@apply font-semibold;
+}
 
 .container-sm {
 	@apply max-w-[818px] mx-auto;
