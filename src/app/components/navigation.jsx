@@ -24,7 +24,7 @@ export default function Navigation() {
 	return(
 		<>
 			<motion.div
-				className="w-screen py-6 fixed top-0 z-10 bg-dark text-white"
+				className="w-full py-6 sticky top-0 z-10 bg-dark text-white"
 				variants={ VARIANTS }
 				animate={ barState }
 				transition={{ ease: 'easeIn', duration: 0.35 }}
