@@ -1,35 +1,62 @@
+'use client'
+import { motion, useScroll, useMotionValueEvent } from 'motion/react'
+import { useState } from 'react'
+
 import Link from 'next/link'
 import Image from 'next/image'
 
 export default function Navigation() {
+	const { scrollY } = useScroll()
+	const [barState, setBarState] = useState('visible')
+	const VARIANTS = {
+		visible: { top: 0, opacity: 1 },
+		hidden: { top: '-12px', opacity: 0.8 },
+	}
+
+	useMotionValueEvent(scrollY, 'change', (current) => {
+		if (current > 80) {
+			setBarState('hidden')
+		} else {
+			setBarState('visible')
+		}
+	})
+
 	return(
-		<div className="py-12 bg-secondary text-white">
-			<div className="container-md max-h-52 px-20 flex items-center justify-between">
-				<Image
-					src="/controller.webp"
-					alt="logo"
-					className='h-full w-auto'
-					width={50}
-					height={50}
-					blurDataURL="data:..."
-					placeholder="blur" />
+		<>
+			<motion.div
+				className="w-screen py-6 fixed top-0 z-10 bg-dark text-white"
+				variants={ VARIANTS }
+				animate={ barState }
+				transition={{ ease: 'easeIn', duration: 0.35 }}
+				whileHover="visible">
+					<div className="container-md h-52 px-20 flex items-center justify-between">
+					<Image
+						src="/controller.webp"
+						alt="logo"
+						className="h-full w-auto"
+						width={100}
+						height={100}
+						blurDataURL="data:..."
+						placeholder="blur" />
 
-				<nav className="flex">
-					<ul className="flex gap-24">
-						<li className="hover-up">
-							<Link href="#projects">Projects</Link>
-						</li>
+					<nav className="flex">
+						<ul className="flex gap-40">
+							<li className="hover-up">
+								<Link href="#projects">Projects</Link>
+							</li>
 
-						<li className="hover-up">
-							<Link href="#about">About</Link>
-						</li>
+							<li className="hover-up">
+								<Link href="#about">About</Link>
+							</li>
 
-						<li className="hover-up">
-							<Link href="#contact">Contact</Link>
-						</li>
-					</ul>
-				</nav>
-			</div>
-		</div>
+							<li className="hover-up">
+								<Link href="#contact">Contact</Link>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</motion.div>
+			<div className="h-64"></div>
+		</>
 	)
 }
