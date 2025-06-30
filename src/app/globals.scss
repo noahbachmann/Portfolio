@@ -8,6 +8,10 @@
 
 	--spacing: 1px;
 
+	--radius-lg: 1rem;
+	--radius-md: 0.5rem;
+	--radius-sm: 0.25rem;
+
 	--color-white: #FFFBDE;
 	--color-primary: #91C8E4;
 	--color-secondary: #749BC2;
@@ -26,7 +30,10 @@ h2 {
 	@apply text-[1.6rem];
 }
 
-h3,
+h3 {
+	@apply text-[1.4rem];
+}
+
 h4,
 a {
 	@apply text-[1.25rem];
