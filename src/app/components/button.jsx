@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 export default function Button({ url, name, index }) {
 	const VARIANTS = {
-		rest: { color: '#de8723', x: -20 },
+		rest: { color: '#562253', x: -20 },
 		hover: { color: '#F0EBCE', x: 0 },
 	}
 

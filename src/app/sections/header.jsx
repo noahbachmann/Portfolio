@@ -5,11 +5,16 @@ import { MatrixCanvas } from '../components'
 export default function Header({ className = '' }) {
 
 	return(
-		<div className={ `flex flex-col justify-center relative ${className}` }>
-			<MatrixCanvas />
+		<div className="w-full h-700 relative">
+			<div className="absolute inset-0">
+				<MatrixCanvas />
+			</div>
 
-			<h1>Header</h1>
-			<p className="text-lead">About me...</p>
+			<div className={ `flex flex-col justify-center ${className}` }>
+
+				<h1>Header</h1>
+				<p className="text-lead">About me...</p>
+			</div>
 		</div>
 	)
 }
