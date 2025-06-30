@@ -59,3 +59,7 @@ h3 {
 .hover-up {
 	@apply duration-250 ease-out hover:-translate-y-4 hover:text-white;
 }
+
+@utility no-scrollbar {
+	@apply [scrollbar-width:none] [&::-webkit-scrollbar]:hidden;
+}
