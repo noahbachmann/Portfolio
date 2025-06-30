@@ -12,10 +12,10 @@
 	--radius-md: 0.5rem;
 	--radius-sm: 0.25rem;
 
-	--color-white: #FFFBDE;
-	--color-primary: #91C8E4;
-	--color-secondary: #749BC2;
-	--color-dark: #4682A9;
+	--color-primary: #547856;
+	--color-secondary: #395144;
+	--color-accent: #de8723;
+	--color-white: #F0EBCE;
 }
 
 html {
@@ -57,5 +57,5 @@ h3 {
 }
 
 .hover-up {
-	@apply duration-250 ease-out hover:-translate-y-4;
+	@apply duration-250 ease-out hover:-translate-y-4 hover:text-white;
 }
