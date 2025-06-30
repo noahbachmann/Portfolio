@@ -10,7 +10,7 @@ export default function Navigation() {
 	const [barState, setBarState] = useState('visible')
 	const VARIANTS = {
 		visible: { top: 0, opacity: 1 },
-		hidden: { top: '-12px', opacity: 0.8 },
+		hidden: { top: '-12px', opacity: 0.7 },
 	}
 
 	useMotionValueEvent(scrollY, 'change', (current) => {

@@ -44,6 +44,10 @@ h3 {
 	@apply font-semibold;
 }
 
+.text-lead {
+	@apply text-[1.125rem] leading-6;
+}
+
 .container-sm {
 	@apply max-w-[818px] mx-auto;
 }
