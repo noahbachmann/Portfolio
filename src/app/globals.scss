@@ -13,10 +13,10 @@
 	--radius-sm: 0.25rem;
 
 	--color-black: #212121;
-	--color-primary: #D3ECCD;
-	--color-secondary: #06923E;
-	--color-accent: #E67514;
-	--color-white: #f0ebce;
+	--color-primary: #7EA16B;
+	--color-secondary: #596F62;
+	--color-accent: #1C3144;
+	--color-white: #D4F4DD;
 }
 
 html {
@@ -50,7 +50,7 @@ h3 {
 }
 
 .container {
-	@apply mx-auto p-24;
+	@apply mx-auto px-24;
 }
 
 .container-sm {
@@ -66,7 +66,7 @@ h3 {
 }
 
 .hover-up {
-	@apply duration-250 ease-out hover:-translate-y-4 hover:text-black;
+	@apply duration-250 ease-out hover:-translate-y-4 hover:text-white;
 }
 
 @utility no-scrollbar {
