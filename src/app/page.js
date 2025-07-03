@@ -4,7 +4,7 @@ export default function Home() {
   return (
 	<div>
 		<Header className="container container-lg min-h-[60vh]"/>
-		<Projects className="bg-secondary" />
+		<Projects className="py-24 bg-primary" />
 		<About />
 		<Contact />
 	</div>
