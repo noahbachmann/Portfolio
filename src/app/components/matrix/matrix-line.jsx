@@ -3,7 +3,7 @@ import { useRef } from 'react'
 import { useFrame } from '@react-three/fiber'
 import { Text } from '@react-three/drei'
 
-const SPEED = 1.25
+const SPEED = 1.3
 
 export default function MatrixLine({  xPos = 0, size = 0.5, text = '10110' }) {
 	const TEXT_REF = useRef(null)
