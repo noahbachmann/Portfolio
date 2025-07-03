@@ -11,7 +11,8 @@ export default function Matrix() {
 	const MATRIX_REF = useRef(null)
 
 	const COLUMNS = []
-	for(let xPos = viewport.width * -0.1; xPos < viewport.width * 0.4; xPos+=0){
+	const HALF_VP = viewport.width * 0.5
+	for(let xPos = -HALF_VP+0.5; xPos < HALF_VP; xPos+=0){
 		if(random(5) > 2){
 			const SIZE = round(random(0.6, 1.4, true), 1)
 			COLUMNS.push({ xPos, size:SIZE })

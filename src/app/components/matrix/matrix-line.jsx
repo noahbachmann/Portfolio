@@ -12,13 +12,15 @@ export default function MatrixLine({  xPos = 0, size = 0.5, text = '10110' }) {
 		TEXT_REF.current.position.y -= delta * size * SPEED
 	})
 
-	const texts = []
-	for(let i = text.length; i >= 0; i--){
-		texts.push(<Text key={i} position={[0,i*size,0]} fontSize={size}>{ text[i] }</Text>)
-	}
 	return(
-		<group position={[xPos, 20, 0]} ref={ TEXT_REF }>
-			{ texts }
-		</group>
+		<Text
+			ref={ TEXT_REF }
+			position={[xPos, 25, 0]}
+			maxWidth={ size }
+			fontSize={ size }
+			lineHeight={ 1.05 }
+			overflowWrap="break-word">
+				{ text }
+		</Text>
 	)
 }
