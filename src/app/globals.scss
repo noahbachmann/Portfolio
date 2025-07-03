@@ -23,7 +23,7 @@ html {
 }
 
 h1 {
-	@apply text-[1.8rem] uppercase;
+	@apply text-[2.75rem] uppercase;
 }
 
 h2 {
@@ -45,19 +45,23 @@ h3 {
 }
 
 .text-lead {
-	@apply text-[1.125rem] leading-6;
+	@apply text-[1.125rem];
+}
+
+.container {
+	@apply mx-auto px-24;
 }
 
 .container-sm {
-	@apply max-w-[818px] mx-auto;
+	@apply max-w-[818px];
 }
 
 .container-md {
-	@apply max-w-[1020px] mx-auto;
+	@apply max-w-[1020px];
 }
 
 .container-lg {
-	@apply max-w-[1224px] mx-auto;
+	@apply max-w-[1224px];
 }
 
 .hover-up {

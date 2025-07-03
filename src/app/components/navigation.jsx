@@ -29,7 +29,7 @@ export default function Navigation() {
 				animate={ barState }
 				transition={{ ease: 'easeIn', duration: 0.35 }}
 				whileHover="visible">
-					<div className="container-lg h-52 px-20 flex items-center justify-between">
+					<div className="container container-lg h-52 px-20 flex items-center justify-between">
 					<Image
 						src="/controller.webp"
 						alt="logo"
