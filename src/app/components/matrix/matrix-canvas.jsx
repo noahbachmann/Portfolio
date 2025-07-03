@@ -1,12 +1,13 @@
 'use client'
 import { Canvas } from '@react-three/fiber'
 
-import MatrixLine from './matrix-line'
+import Matrix from './matrix'
 
 export default function MatrixCanvas() {
+
 	return(
-		<Canvas orthographic camera={{ zoom: 20, position: [0, 0, 10] }}>
-			<MatrixLine amount={3} size={1} />
+		<Canvas orthographic camera={{ zoom: 20, position: [0, 0, 10] }} resize={{ scroll: false }}>
+			<Matrix />
 		</Canvas>
 	)
 }
