@@ -30,6 +30,7 @@ const eslintConfig = [
 			'prefer-const': 'warn',
 			'no-unused-vars': 'warn',
 			'import/no-anonymous-default-export': 'off',
+			'react/no-unescaped-entities': 'off',
 
 			'@style/no-trailing-spaces': 'warn',
 			'@style/quotes': [ 'warn', 'single' ],
