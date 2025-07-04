@@ -9,10 +9,10 @@ export default function StackChart(){
 	const BASE_DATA = {
 		label: 'My Stack',
 		data: {
-			'C#': 83,
-			'JavaScript': 85,
+			'C#': 80,
+			'JavaScript': 82,
 			'HTML/CSS': 95,
-			'SQL': 90,
+			'SQL': 97,
 			'Python': 20
 		},
 		borderWidth: 1
@@ -21,27 +21,26 @@ export default function StackChart(){
 	const CS_DATA = {
 		label:'C#',
 		data: {
-			'.NET': 40,
-			'Blazor': 40,
-			'Unity': 20
+			'.NET': 50,
+			'Blazor': 35,
+			'Unity': 15
 		},
 	}
 
 	const JS_DATA = {
 		label:'JavaScript',
 		data:{
-			'Basic': 20,
 			'React': 50,
-			'Vue': 30
+			'Motion': 30,
+			'Vue': 20
 		}
 	}
 
 	const HTML_DATA = {
 		label:'HTML / CSS',
 		data:{
-			'Tailwind': 50,
-			'Bootstrap': 20,
-			'Canvas': 30
+			'Tailwind': 70,
+			'Bootstrap': 30,
 		}
 	}
 
