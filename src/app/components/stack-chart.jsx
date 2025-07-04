@@ -71,7 +71,8 @@ export default function StackChart(){
 			indexAxis: 'y',
 			scales: {
 				x: {
-					beginAtZero: true
+					beginAtZero: true,
+					max: 100
 				}
 			},
 			onClick: (_, legendItem, legend) => {
