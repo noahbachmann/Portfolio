@@ -21,7 +21,7 @@ export default function Button({ url, name, index }) {
 			animate="rest"
 			whileHover="hover"
 			transition={{ ease: 'easeIn', duration: 0.2 }}
-			className="flex">
+			className="flex font-semibold">
 
 			<motion.div className="w-20 h-auto flex items-center" variants={ ARROW_VARIANTS }>
 				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
