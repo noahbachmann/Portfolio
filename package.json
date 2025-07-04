@@ -13,6 +13,7 @@
 		"@react-three/drei": "^10.3.0",
 		"@react-three/fiber": "^9.1.4",
 		"alpinejs": "^3.14.9",
+		"chart.js": "^4.5.0",
 		"lodash": "^4.17.21",
 		"motion": "^12.19.1",
 		"next": "15.3.4",

@@ -18,8 +18,8 @@ export default function ProjectCard({ project }) {
 						key={ index }
 						src={ image }
 						alt={ title }
-						width={ 500 }
-						height={ 500 }
+						width={ 600 }
+						height={ 600 }
 						className="min-w-full object-cover rounded-t-lg" />
 				)) }
 			</div>
