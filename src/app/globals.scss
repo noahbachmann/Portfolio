@@ -51,6 +51,10 @@ p {
 	@apply text-[1.125rem] leading-22;
 }
 
+hr {
+	@apply border-none bg-black;
+}
+
 .container {
 	@apply mx-auto px-24;
 }

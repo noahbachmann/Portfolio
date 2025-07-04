@@ -27,7 +27,7 @@ export default function ProjectCard({ project }) {
 			<div className="flex flex-1 flex-col gap-20 px-24 py-20">
 				<div>
 					<h3>{ title }</h3>
-
+					<hr className="w-80 h-2 mb-6 rounded-[1px]"/>
 					<p>{ description }</p>
 				</div>
 
