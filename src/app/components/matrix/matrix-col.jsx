@@ -40,7 +40,6 @@ export default function MatrixCol({ xPos = 0, size = 1 }) {
 			spawnLine(AMOUNT, NOW)
 			TIMER.current = 0
 			TIMER_END.current = random(5,8, true) * (1 / size) + (size * 3)
-			console.log('spawned')
 		}
 	})
 
