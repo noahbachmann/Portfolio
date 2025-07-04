@@ -39,7 +39,7 @@ export default function Projects({ className = '' }) {
 							initial="hidden"
 							whileInView="visible"
 							margin="200px 0px 50px 0px"
-							className="h-full bg-accent" />
+							className="h-full bg-primary" />
 					</div>
 				</div>
 			</div>

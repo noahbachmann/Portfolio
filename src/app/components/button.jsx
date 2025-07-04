@@ -4,8 +4,8 @@ import Link from 'next/link'
 
 export default function Button({ url, name, index }) {
 	const VARIANTS = {
-		rest: { color: '#1C3144', x: -20 },
-		hover: { color: '#D4F4DD', x: 0 },
+		rest: { color: '#254d32', x: -20 },
+		hover: { color: '#76104F', x: 0 },
 	}
 
 	const ARROW_VARIANTS = {
