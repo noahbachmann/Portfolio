@@ -2,9 +2,7 @@ export default function About() {
 	return (
 		<div id="about" className="container container-sm py-48">
 			<div className="px-64 flex flex-col justify-center gap-16">
-				<div className="flex justify-center text-center">
-					<h2>Noah Bachmann - Software Developer</h2>
-				</div>
+				<h2>Noah Bachmann - Software Developer</h2>
 				<p>
 					I'm Noah Bachmann, a Software Developer in training. Computer science is my passion and i'm determined to improve my skills every day.
 					Versatility is a strength of mine and i grasp things pretty fast, so i can become a decently capable person in a new topic surprisingly quickly.

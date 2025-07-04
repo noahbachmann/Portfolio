@@ -34,7 +34,12 @@ export default function Projects({ className = '' }) {
 						))}
 					</motion.div>
 					<div className="container-sm w-full h-12 self-center rounded-xl overflow-hidden">
-						<motion.div style={{ scaleX:scrollYProgress, originX: 0, left:0 }} className="h-full bg-accent" />
+						<motion.div
+							style={{ scaleX:scrollYProgress, originX: 0, left:0 }}
+							initial="hidden"
+							whileInView="visible"
+							margin="200px 0px 50px 0px"
+							className="h-full bg-accent" />
 					</div>
 				</div>
 			</div>

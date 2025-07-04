@@ -11,15 +11,15 @@ export default function ProjectCard({ project }) {
 		links } = project
 
 	return(
-		<div className="min-w-500 flex flex-col bg-primary rounded-lg">
+		<div className="min-w-500 flex flex-col bg-primary rounded-lg shadow">
 			<div className="h-300 flex overflow-hidden">
 				{ images.map((image, index) => (
 					<Image
 						key={ index }
 						src={ image }
 						alt={ title }
-						width={ 200 }
-						height={ 200 }
+						width={ 500 }
+						height={ 500 }
 						className="min-w-full object-cover rounded-t-lg" />
 				)) }
 			</div>
