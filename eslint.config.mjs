@@ -31,6 +31,7 @@ const eslintConfig = [
 			'no-unused-vars': 'warn',
 			'import/no-anonymous-default-export': 'off',
 			'react/no-unescaped-entities': 'off',
+			'react-hooks/exhaustive-deps':'off',
 
 			'@style/no-trailing-spaces': 'warn',
 			'@style/quotes': [ 'warn', 'single' ],

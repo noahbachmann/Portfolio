@@ -1,6 +1,7 @@
 'use client'
 import { motion, useTransform, useScroll } from 'motion/react'
 import { useState, useRef, useEffect } from 'react'
+import { useWindowWidth } from '@react-hook/window-size'
 
 import { ProjectCard } from '../components'
 import data from '@/data/projects.json'
@@ -8,17 +9,18 @@ import data from '@/data/projects.json'
 export default function Projects({ className = '' }) {
 	const SECTION_REF = useRef(null)
 	const SCROLL_REF = useRef(null)
+	const WINDOW_WIDTH = useWindowWidth()
 	const [scrollInfo, setScrollInfo] = useState(0)
-
-	useEffect(() => {
-		setScrollInfo(SECTION_REF.current.offsetWidth - SCROLL_REF.current.scrollWidth - 32)
-	}, [])
 
 	const { scrollYProgress } = useScroll({
 		target: SECTION_REF,
 	})
 
-	const x = useTransform(scrollYProgress, [0, 1], [0, scrollInfo])
+	useEffect(() => {
+		setScrollInfo(WINDOW_WIDTH - SCROLL_REF.current.scrollWidth - 32)
+	}, [WINDOW_WIDTH])
+
+	const x = useTransform(scrollYProgress, [0,1], [32, scrollInfo])
 
 	return(
 		<div id="projects" className={ `w-full min-h-full ${className}` }>
