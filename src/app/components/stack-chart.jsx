@@ -47,7 +47,7 @@ export default function StackChart(){
 	const SQL_DATA = {
 		label:'SQL',
 		data:{
-			'SQL': 80,
+			'MySQL': 80,
 			'MSSQL': 20,
 		}
 	}
