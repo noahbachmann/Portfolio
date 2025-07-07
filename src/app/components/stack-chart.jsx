@@ -9,13 +9,7 @@ const COLORS = [
   'rgba(152, 204, 253, 0.55)',
   'rgba(55, 114, 164, 0.55)'
 ]
-const BORDER_COLORS = [
-  'rgba(167, 0, 222, 1)',
-  'rgba(255, 214, 0, 1)',
-  'rgba(255, 101, 30, 1)',
-  'rgba(152, 204, 253, 1)',
-  'rgba(55, 114, 164, 1)'
-]
+const BORDER_COLORS = ['#a700de', '#ffd600', '#ff651e', '#98ccfd', '#3772a4']
 
 export default function StackChart(){
 	const CANVAS_REF = useRef(null)
@@ -31,7 +25,9 @@ export default function StackChart(){
 			'Python': 20
 		},
 		backgroundColor:COLORS,
-		borderColor:BORDER_COLORS
+		hoverBackgroundColor:BORDER_COLORS,
+		borderColor:BORDER_COLORS,
+		hoverBorderColor: '#fff'
 	}
 
 	const CS_DATA = {
@@ -42,6 +38,7 @@ export default function StackChart(){
 			'Unity': 15
 		},
 		backgroundColor:COLORS[0],
+		hoverBackgroundColor:BORDER_COLORS[0],
 		borderColor:BORDER_COLORS[0]
 	}
 
@@ -53,6 +50,7 @@ export default function StackChart(){
 			'Vue': 20
 		},
 		backgroundColor:COLORS[1],
+		hoverBackgroundColor:BORDER_COLORS[1],
 		borderColor:BORDER_COLORS[1]
 	}
 
@@ -63,6 +61,7 @@ export default function StackChart(){
 			'Bootstrap': 30,
 		},
 		backgroundColor:COLORS[2],
+		hoverBackgroundColor:BORDER_COLORS[2],
 		borderColor:BORDER_COLORS[2]
 	}
 
@@ -73,6 +72,7 @@ export default function StackChart(){
 			'MSSQL': 20,
 		},
 		backgroundColor:COLORS[3],
+		hoverBackgroundColor:BORDER_COLORS[3],
 		borderColor:BORDER_COLORS[3]
 	}
 
@@ -83,9 +83,11 @@ export default function StackChart(){
 			'LeetCode': 25,
 		},
 		backgroundColor:COLORS[4],
+		hoverBackgroundColor:BORDER_COLORS[4],
 		borderColor:BORDER_COLORS[4]
 	}
 
+	let delayed
 	const CHART_CONFIG = {
 		type: 'bar',
 		data: {
@@ -99,6 +101,18 @@ export default function StackChart(){
 					beginAtZero: true,
 					max: 100
 				}
+			},
+			animation: {
+				onComplete: () => {
+					delayed: true
+				},
+				delay: (context) => {
+					let delay = 0
+					if(context.type === 'data' && context.mode === 'default' && !delayed){
+						delay = context.dataIndex * 200
+					}
+					return delay
+				},
 			},
 			elements:{
 				bar:{
