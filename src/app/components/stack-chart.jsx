@@ -127,7 +127,7 @@ export default function StackChart(){
 						color:'#000',
 						padding:15,
 						font:{
-							size: 14,
+							size: 16,
 						}
 					},
 					title:{
@@ -138,9 +138,6 @@ export default function StackChart(){
 							size: 24,
 							weight:'bold'
 						}
-					},
-					onHover: (context) => {
-						console.log(context)
 					},
 					onClick: (_, legendItem, legend) => {
 						if(legendItem.length == 0) {
@@ -195,8 +192,6 @@ export default function StackChart(){
 				},
 			},
 			onClick: (_, legendItem, legend) => {
-				console.log(legendItem)
-				console.log(legend)
 				if(legendItem.length == 0) {
 					CHART_REF.current.data = BASE_DATA
 					CHART_REF.current.update()
