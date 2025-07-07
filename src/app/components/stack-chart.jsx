@@ -3,13 +3,19 @@ import Chart from 'chart.js/auto'
 import { useRef, useEffect } from 'react'
 
 const COLORS = [
-  'rgba(167, 0, 222, 0.55)',
-  'rgba(255, 214, 0, 0.55)',
-  'rgba(255, 101, 30, 0.55)',
-  'rgba(152, 204, 253, 0.55)',
-  'rgba(55, 114, 164, 0.55)'
+  'rgba(167, 0, 222, 0.6)',
+  'rgba(255, 214, 0, 0.6)',
+  'rgba(255, 101, 30, 0.6)',
+  'rgba(152, 204, 253, 0.6)',
+  'rgba(55, 114, 164, 0.6)'
 ]
-const BORDER_COLORS = ['#a700de', '#ffd600', '#ff651e', '#98ccfd', '#3772a4']
+const HOVER_COLORS = [
+	'#a700de',
+	'#ffd600',
+	'#ff651e',
+	'#98ccfd',
+	'#3772a4'
+]
 
 export default function StackChart(){
 	const CANVAS_REF = useRef(null)
@@ -25,9 +31,7 @@ export default function StackChart(){
 			'Python': 20
 		},
 		backgroundColor:COLORS,
-		hoverBackgroundColor:BORDER_COLORS,
-		borderColor:BORDER_COLORS,
-		hoverBorderColor: '#fff'
+		hoverBackgroundColor:HOVER_COLORS,
 	}
 
 	const CS_DATA = {
@@ -38,8 +42,7 @@ export default function StackChart(){
 			'Unity': 15
 		},
 		backgroundColor:COLORS[0],
-		hoverBackgroundColor:BORDER_COLORS[0],
-		borderColor:BORDER_COLORS[0]
+		hoverBackgroundColor:HOVER_COLORS[0],
 	}
 
 	const JS_DATA = {
@@ -50,8 +53,7 @@ export default function StackChart(){
 			'Vue': 20
 		},
 		backgroundColor:COLORS[1],
-		hoverBackgroundColor:BORDER_COLORS[1],
-		borderColor:BORDER_COLORS[1]
+		hoverBackgroundColor:HOVER_COLORS[1],
 	}
 
 	const HTML_DATA = {
@@ -61,8 +63,7 @@ export default function StackChart(){
 			'Bootstrap': 30,
 		},
 		backgroundColor:COLORS[2],
-		hoverBackgroundColor:BORDER_COLORS[2],
-		borderColor:BORDER_COLORS[2]
+		hoverBackgroundColor:HOVER_COLORS[2],
 	}
 
 	const SQL_DATA = {
@@ -72,8 +73,7 @@ export default function StackChart(){
 			'MSSQL': 20,
 		},
 		backgroundColor:COLORS[3],
-		hoverBackgroundColor:BORDER_COLORS[3],
-		borderColor:BORDER_COLORS[3]
+		hoverBackgroundColor:HOVER_COLORS[3],
 	}
 
 	const PYTHON_DATA = {
@@ -83,8 +83,7 @@ export default function StackChart(){
 			'LeetCode': 25,
 		},
 		backgroundColor:COLORS[4],
-		hoverBackgroundColor:BORDER_COLORS[4],
-		borderColor:BORDER_COLORS[4]
+		hoverBackgroundColor:HOVER_COLORS[4],
 	}
 
 	let delayed
@@ -117,7 +116,6 @@ export default function StackChart(){
 			elements:{
 				bar:{
 					borderRadius: 100,
-					borderWidth: 2
 				}
 			},
 			plugins:{
@@ -129,6 +127,9 @@ export default function StackChart(){
 							size: 24,
 						}
 					},
+				},
+				tooltip:{
+					enabled: false
 				}
 			},
 			onClick: (_, legendItem, legend) => {
@@ -138,28 +139,26 @@ export default function StackChart(){
 					return
 				}
 
-				switch(legend.boxes[0].legendItems[0].text){
-					case 'My Stack':
-						switch(legendItem[0].index){
-							case 0:
-								CHART_REF.current.data.datasets[0] = CS_DATA
-								break
-							case 1:
-								CHART_REF.current.data.datasets[0] = JS_DATA
-								break
-							case 2:
-								CHART_REF.current.data.datasets[0] = HTML_DATA
-								break
-							case 3:
-								CHART_REF.current.data.datasets[0] = SQL_DATA
-								break
-							case 4:
-								CHART_REF.current.data.datasets[0] = PYTHON_DATA
-								break
-						}
-						break
-					default:
-						CHART_REF.current.data.datasets[0] = BASE_DATA
+				if(legend.boxes[0].legendItems[0].text == 'My Stack'){
+					switch(legendItem[0].index){
+						case 0:
+							CHART_REF.current.data.datasets[0] = CS_DATA
+							break
+						case 1:
+							CHART_REF.current.data.datasets[0] = JS_DATA
+							break
+						case 2:
+							CHART_REF.current.data.datasets[0] = HTML_DATA
+							break
+						case 3:
+							CHART_REF.current.data.datasets[0] = SQL_DATA
+							break
+						case 4:
+							CHART_REF.current.data.datasets[0] = PYTHON_DATA
+							break
+					}
+				} else {
+					CHART_REF.current.data.datasets[0] = BASE_DATA
 				}
 				CHART_REF.current.update()
 			}

@@ -18,11 +18,8 @@ export default function About() {
 					i am very capable of using those different skillsets to create user interfaces for people to interact with databases.
 				</p>
 
-				<h4 className="font-semibold">My Stack:</h4>
-
 				<StackChart />
 			</div>
-
 		</div>
 	)
 }
