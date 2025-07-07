@@ -2,6 +2,21 @@
 import Chart from 'chart.js/auto'
 import { useRef, useEffect } from 'react'
 
+const COLORS = [
+  'rgba(167, 0, 222, 0.55)',
+  'rgba(255, 214, 0, 0.55)',
+  'rgba(255, 101, 30, 0.55)',
+  'rgba(152, 204, 253, 0.55)',
+  'rgba(55, 114, 164, 0.55)'
+]
+const BORDER_COLORS = [
+  'rgba(167, 0, 222, 1)',
+  'rgba(255, 214, 0, 1)',
+  'rgba(255, 101, 30, 1)',
+  'rgba(152, 204, 253, 1)',
+  'rgba(55, 114, 164, 1)'
+]
+
 export default function StackChart(){
 	const CANVAS_REF = useRef(null)
 	const CHART_REF = useRef(null)
@@ -15,7 +30,8 @@ export default function StackChart(){
 			'SQL': 97,
 			'Python': 20
 		},
-		borderWidth: 1
+		backgroundColor:COLORS,
+		borderColor:BORDER_COLORS
 	}
 
 	const CS_DATA = {
@@ -25,6 +41,8 @@ export default function StackChart(){
 			'Blazor': 35,
 			'Unity': 15
 		},
+		backgroundColor:COLORS[0],
+		borderColor:BORDER_COLORS[0]
 	}
 
 	const JS_DATA = {
@@ -33,7 +51,9 @@ export default function StackChart(){
 			'React': 50,
 			'Motion': 30,
 			'Vue': 20
-		}
+		},
+		backgroundColor:COLORS[1],
+		borderColor:BORDER_COLORS[1]
 	}
 
 	const HTML_DATA = {
@@ -41,7 +61,9 @@ export default function StackChart(){
 		data:{
 			'Tailwind': 70,
 			'Bootstrap': 30,
-		}
+		},
+		backgroundColor:COLORS[2],
+		borderColor:BORDER_COLORS[2]
 	}
 
 	const SQL_DATA = {
@@ -49,7 +71,9 @@ export default function StackChart(){
 		data:{
 			'MySQL': 80,
 			'MSSQL': 20,
-		}
+		},
+		backgroundColor:COLORS[3],
+		borderColor:BORDER_COLORS[3]
 	}
 
 	const PYTHON_DATA = {
@@ -57,7 +81,9 @@ export default function StackChart(){
 		data:{
 			'Pygame': 75,
 			'LeetCode': 25,
-		}
+		},
+		backgroundColor:COLORS[4],
+		borderColor:BORDER_COLORS[4]
 	}
 
 	const CHART_CONFIG = {
@@ -72,6 +98,23 @@ export default function StackChart(){
 				x: {
 					beginAtZero: true,
 					max: 100
+				}
+			},
+			elements:{
+				bar:{
+					borderRadius: 100,
+					borderWidth: 2
+				}
+			},
+			plugins:{
+				legend:{
+					labels:{
+						boxWidth: 0,
+						color:'#000',
+						font:{
+							size: 24,
+						}
+					},
 				}
 			},
 			onClick: (_, legendItem, legend) => {
