@@ -23,7 +23,7 @@ export default function Projects({ className = '' }) {
 	const x = useTransform(scrollYProgress, [0,1], [32, scrollInfo])
 
 	return(
-		<div id="projects" className={ `w-full min-h-full ${className}` }>
+		<div id="projects" className={ `w-full min-h-full scroll-smooth ${className}` }>
 			<div ref={ SECTION_REF } className="h-[300vh] relative">
 				<div ref={ SCROLL_REF } className="h-screen px-32 sticky top-0 flex flex-col gap-24 justify-center overflow-hidden">
 					<motion.div style={{ x }} className=" flex gap-24">
