@@ -3,7 +3,7 @@ import { StackChart } from '../components'
 export default function About() {
 	return (
 		<div id="about" className="container container-sm py-48">
-			<div className="px-64 flex flex-col justify-center gap-16">
+			<div className="+md:px-64 flex flex-col justify-center gap-16">
 				<h2>Noah Bachmann - Software Developer</h2>
 
 				<p>
@@ -20,6 +20,7 @@ export default function About() {
 
 				<StackChart />
 			</div>
+
 		</div>
 	)
 }
