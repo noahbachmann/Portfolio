@@ -1,6 +1,6 @@
-export default function Contact() {
+export default function Contact({ className = '' }) {
 	return(
-		<div id="contact">
+		<div id="contact" className={ `size-full container container-sm ${className}` }>
 			<h2>Contact</h2>
 		</div>
 	)

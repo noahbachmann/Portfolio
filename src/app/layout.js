@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
 					{ children }
 				</main>
 
-				<Footer />
+				<Footer className="size-full bg-secondary"/>
 			</body>
 		</html>
 	)
