@@ -17,6 +17,7 @@ const HOVER_COLORS = [
 	'#98ccfd',
 	'#3772a4'
 ]
+const HOVER_LABEL = '#d11302'
 
 function GenerateLighterShades(rgba, x, diff = 45) {
 	const MATCH = rgba.match(/rgba?\((\d+),\s*(\d+),\s*(\d+),?\s*([\d.]*)\)/i)
@@ -31,19 +32,21 @@ function GenerateLighterShades(rgba, x, diff = 45) {
 		SHADES.push(`rgba(${min([r + (i*diff), 255])}, ${min([g + (i*diff), 255])}, ${min([b + (i*diff), 255])}, ${a})`)
 	}
 	return SHADES
-	}
+}
 
 export default function StackChart(){
 	const CANVAS_REF = useRef(null)
 	const CHART_REF = useRef(null)
+	const PREV_COLOR = useRef(null)
 
 	const BASE_DATA = {
 		labels: ['C#', 'JavaScript', 'HTML/CSS', 'SQL', 'Python'],
 		datasets: [{
-			label: 'My Stack',
+			label: 'Skillset',
 			data: [19, 24, 24, 25, 8],
 			backgroundColor: COLORS,
 			hoverBackgroundColor: HOVER_COLORS,
+			hoverLabel: HOVER_LABEL
 		}]
 	}
 
@@ -52,8 +55,9 @@ export default function StackChart(){
 		datasets: [{
 			label: 'C#',
 			data: [50, 35, 15],
-			backgroundColor: GenerateLighterShades(COLORS[0],3),
+			backgroundColor: GenerateLighterShades(COLORS[0],3,50),
 			hoverBackgroundColor: HOVER_COLORS[0],
+			hoverLabel: HOVER_LABEL
 		}]
 	}
 
@@ -64,6 +68,7 @@ export default function StackChart(){
 			data: [50, 30, 20],
 			backgroundColor: GenerateLighterShades(COLORS[1],3),
 			hoverBackgroundColor: HOVER_COLORS[1],
+			hoverLabel: HOVER_LABEL
 		}]
 	}
 
@@ -74,6 +79,7 @@ export default function StackChart(){
 			data: [70, 30],
 			backgroundColor: GenerateLighterShades(COLORS[2],2),
 			hoverBackgroundColor: HOVER_COLORS[2],
+			hoverLabel: HOVER_LABEL
 		}]
 	}
 
@@ -84,6 +90,7 @@ export default function StackChart(){
 			data: [80, 20],
 			backgroundColor: GenerateLighterShades(COLORS[3],2),
 			hoverBackgroundColor: HOVER_COLORS[3],
+			hoverLabel: HOVER_LABEL
 		}]
 	}
 
@@ -94,6 +101,7 @@ export default function StackChart(){
 			data: [75, 25],
 			backgroundColor: GenerateLighterShades(COLORS[4],2),
 			hoverBackgroundColor: HOVER_COLORS[4],
+			hoverLabel: HOVER_LABEL
 		}]
 	}
 
@@ -126,18 +134,29 @@ export default function StackChart(){
 					labels:{
 						color:'#000',
 						padding:15,
+						textAlign:'start',
 						font:{
 							size: 16,
 						}
 					},
 					title:{
 						display:true,
-						text:'MY STACK',
+						text:'SKILLSET',
 						color:'#000',
 						font:{
 							size: 24,
 							weight:'bold'
 						}
+					},
+					events: ['mousemove', 'mouseout', 'click'],
+					onHover: (_, legendItem, legend) => {
+						PREV_COLOR.current = legend.chart.data.datasets[0].backgroundColor[legendItem.index]
+						legend.chart.data.datasets[0].backgroundColor[legendItem.index] = legend.chart.data.datasets[0].hoverLabel
+						CHART_REF.current.update()
+					},
+					onLeave: (_, legendItem, legend) => {
+						legend.chart.data.datasets[0].backgroundColor[legendItem.index] = PREV_COLOR.current
+						CHART_REF.current.update()
 					},
 					onClick: (_, legendItem, legend) => {
 						if(legendItem.length == 0) {
