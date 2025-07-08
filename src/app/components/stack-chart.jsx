@@ -130,7 +130,7 @@ export default function StackChart(){
 				}
 			},
 			animation:{
-				duration:600,
+				duration:450,
 				easing: 'easeInOutElastic',
 			},
 			plugins:{
@@ -141,6 +141,7 @@ export default function StackChart(){
 						color:'#000',
 						padding:15,
 						textAlign:'start',
+						boxHeight:20,
 						font:{
 							size: 16,
 						}
