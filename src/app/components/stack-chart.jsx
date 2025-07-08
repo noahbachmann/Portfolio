@@ -34,6 +34,14 @@ function GenerateLighterShades(rgba, x, diff = 45) {
 	return SHADES
 }
 
+function HandleLabelHover(legend, index, colorRef, chartRef){
+	if(colorRef.current != null){
+		legend.chart.data.datasets[0].backgroundColor[index] = colorRef.current
+		colorRef.current = null
+		chartRef.current.update()
+	}
+}
+
 export default function StackChart(){
 	const CANVAS_REF = useRef(null)
 	const CHART_REF = useRef(null)
@@ -45,8 +53,7 @@ export default function StackChart(){
 			label: 'Skillset',
 			data: [19, 24, 24, 25, 8],
 			backgroundColor: COLORS,
-			hoverBackgroundColor: HOVER_COLORS,
-			hoverLabel: HOVER_LABEL
+			hoverBackgroundColor: HOVER_COLORS
 		}]
 	}
 
@@ -56,8 +63,7 @@ export default function StackChart(){
 			label: 'C#',
 			data: [50, 35, 15],
 			backgroundColor: GenerateLighterShades(COLORS[0],3,50),
-			hoverBackgroundColor: HOVER_COLORS[0],
-			hoverLabel: HOVER_LABEL
+			hoverBackgroundColor: HOVER_COLORS[0]
 		}]
 	}
 
@@ -67,8 +73,7 @@ export default function StackChart(){
 			label: 'JavaScript',
 			data: [50, 30, 20],
 			backgroundColor: GenerateLighterShades(COLORS[1],3),
-			hoverBackgroundColor: HOVER_COLORS[1],
-			hoverLabel: HOVER_LABEL
+			hoverBackgroundColor: HOVER_COLORS[1]
 		}]
 	}
 
@@ -78,8 +83,7 @@ export default function StackChart(){
 			label: 'HTML / CSS',
 			data: [70, 30],
 			backgroundColor: GenerateLighterShades(COLORS[2],2),
-			hoverBackgroundColor: HOVER_COLORS[2],
-			hoverLabel: HOVER_LABEL
+			hoverBackgroundColor: HOVER_COLORS[2]
 		}]
 	}
 
@@ -89,8 +93,7 @@ export default function StackChart(){
 			label: 'SQL',
 			data: [80, 20],
 			backgroundColor: GenerateLighterShades(COLORS[3],2),
-			hoverBackgroundColor: HOVER_COLORS[3],
-			hoverLabel: HOVER_LABEL
+			hoverBackgroundColor: HOVER_COLORS[3]
 		}]
 	}
 
@@ -100,8 +103,7 @@ export default function StackChart(){
 			label: 'Python',
 			data: [75, 25],
 			backgroundColor: GenerateLighterShades(COLORS[4],2),
-			hoverBackgroundColor: HOVER_COLORS[4],
-			hoverLabel: HOVER_LABEL
+			hoverBackgroundColor: HOVER_COLORS[4]
 		}]
 	}
 
@@ -151,18 +153,15 @@ export default function StackChart(){
 					events: ['mousemove', 'mouseout', 'click'],
 					onHover: (_, legendItem, legend) => {
 						PREV_COLOR.current = legend.chart.data.datasets[0].backgroundColor[legendItem.index]
-						legend.chart.data.datasets[0].backgroundColor[legendItem.index] = legend.chart.data.datasets[0].hoverLabel
+						legend.chart.data.datasets[0].backgroundColor[legendItem.index] = HOVER_LABEL
 						CHART_REF.current.update()
 					},
 					onLeave: (_, legendItem, legend) => {
-						legend.chart.data.datasets[0].backgroundColor[legendItem.index] = PREV_COLOR.current
-						CHART_REF.current.update()
+						HandleLabelHover(legend, legendItem.index, PREV_COLOR, CHART_REF)
 					},
 					onClick: (_, legendItem, legend) => {
-						if(legendItem.length == 0) {
-							CHART_REF.current.data = BASE_DATA
-							CHART_REF.current.update()
-							return
+						if(legendItem.length != 0) {
+							HandleLabelHover(legend, legendItem.index, PREV_COLOR, CHART_REF)
 						}
 						if(legend.legendItems.length === 5){
 							switch(legendItem.index){
