@@ -14,7 +14,7 @@ export default function Matrix() {
 	const HALF_VP = viewport.width * 0.5
 	for(let xPos = -HALF_VP+0.5; xPos < HALF_VP; xPos+=0){
 		if(random(5) > 2){
-			const SIZE = round(random(0.6, 1.4, true), 1)
+			const SIZE = round(random(0.7, 1.4, true), 1)
 			COLUMNS.push({ xPos, size:SIZE })
 			xPos += SIZE + 0.1
 		} else {

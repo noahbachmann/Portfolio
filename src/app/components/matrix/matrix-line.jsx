@@ -5,7 +5,7 @@ import { Text } from '@react-three/drei'
 
 const SPEED = 1.3
 
-export default function MatrixLine({  xPos = 0, size = 0.5, text = '10110' }) {
+export default function MatrixLine({  xPos = 0, yPos = 25, size = 0.5, text = '10110' }) {
 	const TEXT_REF = useRef(null)
 
 	useFrame((_, delta) => {
@@ -15,7 +15,8 @@ export default function MatrixLine({  xPos = 0, size = 0.5, text = '10110' }) {
 	return(
 		<Text
 			ref={ TEXT_REF }
-			position={[xPos, 25, 0]}
+			position={[xPos, yPos, 0]}
+			color="#254d32"
 			maxWidth={ size }
 			fontSize={ size }
 			lineHeight={ 1.05 }
