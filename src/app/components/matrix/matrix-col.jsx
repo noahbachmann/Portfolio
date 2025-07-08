@@ -34,37 +34,28 @@ export default function MatrixCol({ xPos = 0, size = 1 }) {
 		})
 	}
 
-	function TimerLoop(delta){
+	function TimerLoop(delta, yPos = 25){
 		TIMER.current += delta
 		if(TIMER.current > TIMER_END.current){
-			spawnLine(random(5,9))
+			spawnLine(random(5,9), yPos)
 			TIMER.current = 0
 			TIMER_END.current = random(5,8, true) * (1 / size) + (size * 3)
 		}
 	}
 
-  	useFrame((_, delta) => {
-		if(!FIRST_RUN.current) return
-		TimerLoop(delta)
-	})
-
 	useEffect(() => {
 		if(FIRST_RUN.current) return
 		FIRST_RUN.current = true
 
-		let timer = 0
-		let timer_end = random(1,2)
 		for(let i = 16; i > 0; i-=1) {
-			timer += 1
-			if(timer > timer_end){
-				spawnLine(random(5,9), 25-(i * size * 1.3))
-				timer = 0
-				timer_end = random(5,8, true) * (1 / size) + (size * 3)
-			}
+			TimerLoop(1, 25-(i * size * 1.3))
 		}
-		TIMER.current = timer
-		TIMER_END.current = timer_end
 	}, [])
+
+	useFrame((_, delta) => {
+		if(!FIRST_RUN.current) return
+		TimerLoop(delta)
+	})
 
 	return (
 		<group ref={COL_REF}>
