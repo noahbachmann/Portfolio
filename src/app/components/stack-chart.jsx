@@ -8,14 +8,14 @@ const COLORS = [
   'rgba(255, 214, 0, 0.6)',
   'rgba(255, 101, 30, 0.6)',
   'rgba(152, 204, 253, 0.6)',
-  'rgba(55, 114, 164, 0.6)'
+  'rgba(55, 114, 164, 0.6)',
 ]
 const HOVER_COLORS = [
 	'#a700de',
 	'#ffd600',
 	'#ff651e',
 	'#98ccfd',
-	'#3772a4'
+	'#3772a4',
 ]
 const HOVER_LABEL = '#d11302'
 
@@ -53,7 +53,7 @@ export default function StackChart(){
 			label: 'Skillset',
 			data: [19, 24, 24, 25, 8],
 			backgroundColor: COLORS,
-			hoverBackgroundColor: HOVER_COLORS
+			hoverBackgroundColor: HOVER_COLORS,
 		}]
 	}
 
@@ -63,7 +63,7 @@ export default function StackChart(){
 			label: 'C#',
 			data: [50, 35, 15],
 			backgroundColor: GenerateLighterShades(COLORS[0],3,50),
-			hoverBackgroundColor: HOVER_COLORS[0]
+			hoverBackgroundColor: HOVER_COLORS[0],
 		}]
 	}
 
@@ -73,7 +73,7 @@ export default function StackChart(){
 			label: 'JavaScript',
 			data: [50, 30, 20],
 			backgroundColor: GenerateLighterShades(COLORS[1],3),
-			hoverBackgroundColor: HOVER_COLORS[1]
+			hoverBackgroundColor: HOVER_COLORS[1],
 		}]
 	}
 
@@ -83,7 +83,7 @@ export default function StackChart(){
 			label: 'HTML / CSS',
 			data: [70, 30],
 			backgroundColor: GenerateLighterShades(COLORS[2],2),
-			hoverBackgroundColor: HOVER_COLORS[2]
+			hoverBackgroundColor: HOVER_COLORS[2],
 		}]
 	}
 
@@ -93,7 +93,7 @@ export default function StackChart(){
 			label: 'SQL',
 			data: [80, 20],
 			backgroundColor: GenerateLighterShades(COLORS[3],2),
-			hoverBackgroundColor: HOVER_COLORS[3]
+			hoverBackgroundColor: HOVER_COLORS[3],
 		}]
 	}
 
@@ -103,7 +103,7 @@ export default function StackChart(){
 			label: 'Python',
 			data: [75, 25],
 			backgroundColor: GenerateLighterShades(COLORS[4],2),
-			hoverBackgroundColor: HOVER_COLORS[4]
+			hoverBackgroundColor: HOVER_COLORS[4],
 		}]
 	}
 
@@ -119,7 +119,7 @@ export default function StackChart(){
 			layout:{
 				padding:{
 					top:20,
-					bottom: 20
+					bottom: 20,
 				}
 			},
 			elements:{
@@ -128,6 +128,10 @@ export default function StackChart(){
 					hoverBorderWidth:2,
 					hoverOffset: 30,
 				}
+			},
+			animation:{
+				duration:600,
+				easing: 'easeInOutElastic',
 			},
 			plugins:{
 				legend:{
@@ -147,7 +151,7 @@ export default function StackChart(){
 						color:'#000',
 						font:{
 							size: 24,
-							weight:'bold'
+							weight:'bold',
 						}
 					},
 					events: ['mousemove', 'mouseout', 'click'],
