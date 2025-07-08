@@ -1,5 +1,5 @@
 'use client'
-import { motion, useTransform, useScroll } from 'motion/react'
+import { motion, useTransform, useScroll, useSpring } from 'motion/react'
 import { useState, useRef, useEffect } from 'react'
 import { useWindowWidth } from '@react-hook/window-size'
 
@@ -20,12 +20,17 @@ export default function Projects({ className = '' }) {
 		setScrollInfo(WINDOW_WIDTH - SCROLL_REF.current.scrollWidth - 32)
 	}, [WINDOW_WIDTH])
 
-	const x = useTransform(scrollYProgress, [0,1], [32, scrollInfo])
+	const springedProgress = useSpring(scrollYProgress, {
+		stiffness: 150,
+		damping: 17,
+		restDelta: 0.001,
+	})
+	const x = useTransform(springedProgress, [0,1], [32, scrollInfo])
 
 	return(
 		<div id="projects" className={ `w-full min-h-full scroll-smooth ${className}` }>
 			<div ref={ SECTION_REF } className="h-[300vh] relative">
-				<div ref={ SCROLL_REF } className="h-screen px-32 sticky top-0 flex flex-col gap-24 justify-center overflow-hidden">
+				<div ref={ SCROLL_REF } className="h-screen px-32 md:px-64 sticky top-0 flex flex-col gap-24 justify-center overflow-hidden">
 					<motion.div style={{ x }} className=" flex gap-24">
 						{ data.map((project, index) => (
 							<ProjectCard
@@ -35,7 +40,7 @@ export default function Projects({ className = '' }) {
 					</motion.div>
 					<div className="container-sm w-full h-12 self-center rounded-xl overflow-hidden">
 						<motion.div
-							style={{ scaleX:scrollYProgress, originX: 0, left:0 }}
+							style={{ scaleX:springedProgress, originX: 0, left:0 }}
 							initial="hidden"
 							whileInView="visible"
 							margin="200px 0px 50px 0px"
