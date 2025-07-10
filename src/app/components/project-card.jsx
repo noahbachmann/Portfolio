@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
 
-import Button from './button'
+import { Link } from '.'
 
 export default function ProjectCard({ project }) {
 	const {
@@ -33,7 +33,7 @@ export default function ProjectCard({ project }) {
 
 				<div className="flex flex-col mt-auto">
 					{ Object.entries(links).map(([name, url], index) => (
-						<Button
+						<Link
 							key={ index }
 							url={ url }
 							name={ name } />
