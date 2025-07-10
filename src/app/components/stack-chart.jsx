@@ -4,19 +4,20 @@ import min from 'lodash/min'
 import { useRef, useEffect } from 'react'
 
 const COLORS = [
-  'rgba(167, 0, 222, 0.6)',
-  'rgba(255, 214, 0, 0.6)',
-  'rgba(255, 101, 30, 0.6)',
-  'rgba(152, 204, 253, 0.6)',
-  'rgba(55, 114, 164, 0.6)',
+	'rgba(167, 0, 222, 0.6)',
+	'rgba(255, 214, 0, 0.6)',
+	'rgba(255, 101, 30, 0.6)',
+	'rgba(152, 204, 253, 0.6)',
+	'rgba(55, 114, 164, 0.6)',
 ]
 const HOVER_COLORS = [
-	'#a700de',
-	'#ffd600',
-	'#ff651e',
-	'#98ccfd',
-	'#3772a4',
+	'rgb(167, 0, 222)',
+	'rgb(255, 214, 0)',
+	'rgb(255, 101, 30)',
+	'rgb(152, 204, 253)',
+	'rgb(55, 114, 164)',
 ]
+
 const HOVER_LABEL = '#d11302'
 
 function GenerateLighterShades(rgba, x, diff = 45) {
@@ -252,7 +253,7 @@ export default function StackChart(){
 	}, [])
 
 	return(
-		<div className="relative w-full min-h-[50vh]">
+		<div className="w-full min-h-[50vh] py-24 relative">
 			<canvas ref={ CANVAS_REF }/>
 		</div>
 	)
