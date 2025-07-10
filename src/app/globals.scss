@@ -79,3 +79,7 @@ hr {
 @utility no-scrollbar {
 	@apply [scrollbar-width:none] [&::-webkit-scrollbar]:hidden;
 }
+
+button{
+	@apply cursor-pointer px-16 py-12 bg-secondary text-primary rounded-lg duration-250 ease-out hover:-translate-y-4 hover:text-white;
+}
