@@ -5,7 +5,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 
-export default function Navigation() {
+export default function Navigation({ className='' }) {
 	const { scrollY } = useScroll()
 	const [barState, setBarState] = useState('visible')
 	const VARIANTS = {
@@ -24,7 +24,7 @@ export default function Navigation() {
 	return(
 		<>
 			<motion.div
-				className="w-full py-6 sticky top-0 z-50 bg-secondary text-primary"
+				className={ `w-full py-6 sticky top-0 z-50 bg-secondary text-primary ${ className }` }
 				variants={ VARIANTS }
 				animate={ barState }
 				transition={{ ease: 'easeIn', duration: 0.35 }}
