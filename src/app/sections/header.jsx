@@ -1,6 +1,6 @@
 'use client'
 
-import { MatrixCanvas } from '../components'
+import { MatrixCanvas } from '@components'
 
 export default function Header({ className = '' }) {
 

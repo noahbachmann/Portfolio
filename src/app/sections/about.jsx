@@ -1,4 +1,4 @@
-import { StackChart } from '../components'
+import { StackChart } from '@components'
 
 export default function About() {
 	return (
