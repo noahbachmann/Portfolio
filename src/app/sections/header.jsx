@@ -5,12 +5,12 @@ import { MatrixCanvas } from '../components'
 export default function Header({ className = '' }) {
 
 	return(
-		<div className="w-full h-700 relative">
+		<div className={ `w-full relative ${ className }` }>
 			<div className="absolute inset-0 opacity-60">
 				<MatrixCanvas />
 			</div>
 
-			<div className={ `h-full flex items-center ${className}` }>
+			<div className="container container-md min-h-[70vh] max-h-[80vh] h-full flex items-center">
 				<div className="pl-8 py-16 flex flex-col justify-center relative z-10">
 					<div className="size-full rounded-lg absolute inset-0 bg-primary opacity-60 backdrop-blur -z-10"/>
 					<h1>My Portfolio</h1>
