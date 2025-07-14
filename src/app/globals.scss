@@ -9,7 +9,8 @@
 	--spacing: 1px;
 
 	--radius-lg: 1rem;
-	--radius-md: 0.5rem;
+	--radius-l: 0.8rem;
+	--radius-md: 0.6rem;
 	--radius-sm: 0.25rem;
 
 	--shadow: 2px 2px rgba(0, 0, 0, 0.15);
@@ -81,6 +82,11 @@ hr {
 	@apply [scrollbar-width:none] [&::-webkit-scrollbar]:hidden;
 }
 
-button {
-	@apply cursor-pointer px-12 py-8 rounded duration-250 ease-out hover:scale-102 hover:shadow active:scale-98 active:shadow-rev;
+.button {
+	@apply cursor-pointer px-12 py-8 rounded duration-250 ease-out hover:scale-102 active:scale-98;
+}
+
+input,
+textarea {
+	@apply font-[inherit] p-8 bg-white rounded outline-accent border-accent;
 }
