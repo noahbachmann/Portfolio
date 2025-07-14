@@ -11,20 +11,20 @@ export default function ContactForm(){
 	}
 
 	return(
-		<form className="h-500 flex flex-col justify-evenly" onSubmit={ handleSubmit(OnSubmit) }>
+		<form className="flex-1 flex flex-col justify-evenly" onSubmit={ handleSubmit(OnSubmit) }>
 			<input
-				className="h-[10%]"
+				className="h-[12%]"
 				type="email" placeholder="Your Name"
 				{ ...register('email', { required: true })} />
 
 			<input
-				className="h-[10%]"
+				className="h-[12%]"
 				type="text"
 				placeholder="Subject"
 				{...register('subject')} />
 
 			<textarea
-				className="h-[60%]"
+				className="h-[55%]"
 				type="text"
 				placeholder="Your message..."
 				{ ...register('message', { required: true })}/>

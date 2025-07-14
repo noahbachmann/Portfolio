@@ -1,6 +1,9 @@
 'use client'
 import { useState } from 'react'
 import { ContactForm } from '@components'
+import AtIcon from '@svg/at-icon'
+import MailIcon from '@svg/mail-icon'
+import UserIcon from '@svg/user-icon'
 
 function renderContent(tabNum) {
 	switch (tabNum) {
@@ -35,12 +38,20 @@ export default function Contact({ className = '' }) {
 			<div className="relative">
 				<h3>Noah Bachmann</h3>
 				<div className="h-full flex flex-col justify-evenly items-end absolute right-0 text-secondary">
-					<button className="md:-mr-1 px-12 py-8 cursor-pointer bg-primary rounded-l-l hover:scale-104 active:text-white active:scale-100 duration-200 ease-out" type="button" onClick={ () => setInfo(0) }>Contact</button>
-					<button className="md:-mr-1 px-12 py-8 cursor-pointer bg-primary rounded-l-l hover:scale-104 active:text-white active:scale-100 duration-200 ease-out" type="button" onClick={ () => setInfo(1) }>Socials</button>
-					<button className="md:-mr-1 px-12 py-8 cursor-pointer bg-primary rounded-l-l hover:scale-104 active:text-white active:scale-100 duration-200 ease-out" type="button" onClick={ () => setInfo(2) }>Mail</button>
+					<button className="button-side" type="button" onClick={ () => setInfo(0) }>
+						<UserIcon />
+					</button>
+
+					<button className="button-side flex" type="button" onClick={ () => setInfo(1) }>
+						<AtIcon />
+					</button>
+
+					<button className="button-side" type="button" onClick={ () => setInfo(2) }>
+						<MailIcon />
+					</button>
 				</div>
 			</div>
-			<div className="min-h-500 bg-primary p-24 rounded-lg">
+			<div className="min-h-500 flex flex-col bg-primary p-24 rounded-lg">
 				{ renderContent(info) }
 			</div>
 		</div>
