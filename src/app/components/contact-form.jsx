@@ -13,7 +13,7 @@ export default function ContactForm(){
 	return(
 		<form className="h-500 flex flex-col justify-evenly" onSubmit={ handleSubmit(OnSubmit) }>
 			<input
-				className="-8 bg-white prounded h-[10%]"
+				className="p-8 bg-white rounded h-[10%]"
 				type="email" placeholder="Your Name"
 				{ ...register('email', { required: true })} />
 
