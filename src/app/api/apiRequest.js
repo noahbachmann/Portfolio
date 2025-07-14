@@ -1,7 +1,6 @@
-export async function SendEmail(data){
-	const API_POINT = '/api/email'
+export async function API_Post(data, api_point){
 	try {
-		const RES = await fetch(API_POINT, {
+		const RES = await fetch(api_point, {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -10,12 +9,11 @@ export async function SendEmail(data){
 		})
 
 		const RESPONSE = await RES.json()
-
 		if (RES.ok) {
 			alert(RESPONSE.message)
 			return true
 		} else {
-			alert(RESPONSE.error || 'Something went wrong.')
+			alert(RESPONSE.error || RESPONSE.message || 'Something went wrong.')
 			return false
 		}
 	} catch (err) {

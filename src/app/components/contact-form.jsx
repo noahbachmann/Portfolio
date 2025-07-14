@@ -1,12 +1,12 @@
 'use client'
 import { useForm } from 'react-hook-form'
-import { SendEmail } from '@/app/components/email-request'
+import { API_Post } from '@/app/api/apiRequest'
 
 export default function ContactForm(){
 	const { register, handleSubmit, reset } = useForm()
 
 	async function OnSubmit(data){
-		const CHECK = await SendEmail(data)
+		const CHECK = await API_Post(data, '/api/email')
 		if(CHECK) reset()
 	}
 
@@ -14,20 +14,20 @@ export default function ContactForm(){
 		<form className="flex-1 flex flex-col justify-evenly" onSubmit={ handleSubmit(OnSubmit) }>
 			<input
 				className="h-[12%]"
-				type="email" placeholder="Your Name"
-				{ ...register('email', { required: true })} />
+				type="text" placeholder="Your Name"
+				{ ...register('name', { required: true, maxLength:50 })} />
 
 			<input
 				className="h-[12%]"
 				type="text"
 				placeholder="Subject"
-				{...register('subject')} />
+				{...register('subject', { maxLength:50 })} />
 
 			<textarea
 				className="h-[55%]"
 				type="text"
 				placeholder="Your message..."
-				{ ...register('message', { required: true })}/>
+				{ ...register('message', { required: true, maxLength:200 })}/>
 
 			<button className="button text-primary bg-secondary border-2 hover:text-white">Send</button>
 		</form>

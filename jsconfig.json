@@ -9,6 +9,9 @@
 			],
 			"@svg/*": [
 				"./src/app/components/svg/*"
+			],
+			"@api/*": [
+				"./src/app/api/*"
 			]
 		}
 	}
