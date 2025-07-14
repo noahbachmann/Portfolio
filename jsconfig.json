@@ -7,8 +7,8 @@
 			"@components": [
 				"./src/app/components"
 			],
-			"@api/*": [
-				"./src/app/api/*"
+			"@svg/*": [
+				"./src/app/components/svg/*"
 			]
 		}
 	}
