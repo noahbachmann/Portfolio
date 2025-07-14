@@ -1,17 +1,35 @@
+'use client'
+import { useForm } from 'react-hook-form'
+import { SendEmail } from '@/app/components/email-request'
+
 export default function ContactForm(){
-	async function CreateEmail(formData){
-		const rawData = {
-			email: formData.get('email'),
-			about: formData.get('about'),
-			message: formData.get('message'),
-		}
+	const { register, handleSubmit, reset } = useForm()
+
+	async function OnSubmit(data){
+		const CHECK = await SendEmail(data)
+		if(CHECK) reset()
 	}
+
 	return(
-		<form className="h-500 flex flex-col justify-evenly" action={ CreateEmail() }>
-			<input className="bg-white p-8 rounded h-[10%]" type="email" name="email" placeholder="Your E-Mail" required/>
-			<input className="bg-white p-8 rounded h-[10%]" type="text" name="about" placeholder="Subject" />
-			<textarea className="bg-white p-8 rounded h-[60%]" type="text" name="message" placeholder="Your message..." required/>
-			<button className="text-secondary bg-primary hover:text-black active:text-accent" type="submit">Send</button>
+		<form className="h-500 flex flex-col justify-evenly" onSubmit={ handleSubmit(OnSubmit) }>
+			<input
+				className="-8 bg-white prounded h-[10%]"
+				type="email" placeholder="Your Name"
+				{ ...register('email', { required: true })} />
+
+			<input
+				className="p-8 bg-white rounded h-[10%]"
+				type="text"
+				placeholder="Subject"
+				{...register('subject')} />
+
+			<textarea
+				className="p-8 bg-white rounded h-[60%]"
+				type="text"
+				placeholder="Your message..."
+				{ ...register('message', { required: true })}/>
+
+			<button className="text-secondary bg-primary hover:text-black active:text-accent">Send</button>
 		</form>
 	)
 }
