@@ -50,6 +50,10 @@ h2 {
 	@apply font-semibold uppercase;
 }
 
+h6 {
+	@apply text-[0.85rem] text-secondary mt-12;
+}
+
 p {
 	@apply text-[1.125rem] leading-22;
 }

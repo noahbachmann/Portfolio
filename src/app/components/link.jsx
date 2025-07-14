@@ -1,8 +1,10 @@
 'use client'
 import { motion } from 'motion/react'
 import Link from 'next/link'
+import Arrows from '@svg/arrows'
+import Download from '@svg/download'
 
-export default function CustomLink({ url, name, index = 1 }) {
+export default function CustomLink({ url, name, index = 1, download = false }) {
 	const VARIANTS = {
 		rest: { color: '#254d32', x: -20 },
 		hover: { color: '#76104F', x: 0 },
@@ -14,25 +16,45 @@ export default function CustomLink({ url, name, index = 1 }) {
 	}
 
 	return(
-		<Link
-			href={ url }
-			target="_blank">
-			<motion.div
-				key={index}
-				variants={VARIANTS}
-				initial="rest"
-				animate="rest"
-				whileHover="hover"
-				transition={{ ease: 'easeIn', duration: 0.2 }}
-				className="flex font-semibold">
+		<>
+		{
+			!download ?
+				<Link
+					href={ url }
+					target="_blank">
+					<motion.div
+						key={index}
+						variants={VARIANTS}
+						initial="rest"
+						animate="rest"
+						whileHover="hover"
+						transition={{ ease: 'easeIn', duration: 0.2 }}
+						className="flex font-semibold">
 
-				<motion.div className="w-20 h-auto flex items-center" variants={ ARROW_VARIANTS }>
-					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-						<path strokeLinecap="round" strokeLinejoin="round" d="m5.25 4.5 7.5 7.5-7.5 7.5m6-15 7.5 7.5-7.5 7.5" />
-					</svg>
-				</motion.div>
-				{ name }
-			</motion.div>
-		</Link>
+						<motion.div className="w-20 h-auto flex items-center" variants={ ARROW_VARIANTS }>
+								<Arrows />
+						</motion.div>
+						{ name }
+					</motion.div>
+				</Link>
+				:
+				<a href={ url }>
+					<motion.div
+						key={index}
+						variants={VARIANTS}
+						initial="rest"
+						animate="rest"
+						whileHover="hover"
+						transition={{ ease: 'easeIn', duration: 0.2 }}
+						className="flex font-semibold">
+
+						<motion.div className="w-20 h-auto flex items-center" variants={ ARROW_VARIANTS }>
+								<Download />
+						</motion.div>
+						{ name }
+					</motion.div>
+				</a>
+		}
+		</>
 	)
 }

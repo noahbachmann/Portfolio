@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react'
-import { ContactForm } from '@components'
+
+import { ContactForm, Link } from '@components'
 import AtIcon from '@svg/at-icon'
 import MailIcon from '@svg/mail-icon'
 import UserIcon from '@svg/user-icon'
@@ -9,22 +10,35 @@ function renderContent(tabNum) {
 	switch (tabNum) {
 		case 0:
 			return(
-				<>
+				<div>
 					<h3 className="text-secondary">Contact</h3>
-				</>
+					<h6>Name</h6>
+					<p>Noah Bachmann</p>
+					<h6>From</h6>
+					<p>Switzerland</p>
+					<h6>E-Mail</h6>
+					<p>noah.bachmann@kauz.ch</p>
+					<h6>Company</h6>
+					<p>Kauz Informatik Medien AG</p>
+					<h6>Download Contact</h6>
+					<Link
+						url="/contact-card.vcf"
+						name="Download"
+						download/>
+				</div>
 			)
 		case 1:
 			return (
-				<>
+				<div>
 					<h3 className="text-secondary">My Socials</h3>
-				</>
+				</div>
 			)
 		case 2:
 			return (
-				<>
+				<div className="size-full flex flex-col">
 					<h3 className="text-secondary">Send me something</h3>
 					<ContactForm />
-				</>
+				</div>
 			)
 		default:
 			return null
@@ -51,7 +65,7 @@ export default function Contact({ className = '' }) {
 					</button>
 				</div>
 			</div>
-			<div className="min-h-500 flex flex-col bg-primary p-24 rounded-lg">
+			<div className="min-h-500 bg-primary p-24 rounded-lg">
 				{ renderContent(info) }
 			</div>
 		</div>

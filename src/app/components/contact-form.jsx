@@ -24,7 +24,7 @@ export default function ContactForm(){
 				{...register('subject', { maxLength:50 })} />
 
 			<textarea
-				className="h-[55%]"
+				className="h-[55%] resize-none"
 				type="text"
 				placeholder="Your message..."
 				{ ...register('message', { required: true, maxLength:200 })}/>
