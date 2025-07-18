@@ -1,6 +1,6 @@
 'use client'
 import { useState } from 'react'
-
+import Image from 'next/image'
 import { ContactForm, Link } from '@components'
 import AtIcon from '@svg/at-icon'
 import MailIcon from '@svg/mail-icon'
@@ -12,19 +12,28 @@ function renderContent(tabNum) {
 			return(
 				<div>
 					<h3 className="text-secondary">Contact</h3>
-					<h6>Name</h6>
-					<p>Noah Bachmann</p>
-					<h6>From</h6>
-					<p>Switzerland</p>
-					<h6>E-Mail</h6>
-					<p>noah.bachmann@kauz.ch</p>
-					<h6>Company</h6>
-					<p>Kauz Informatik Medien AG</p>
-					<h6>Download Contact</h6>
-					<Link
-						url="/contact-card.vcf"
-						name="Download"
-						download/>
+					<div>
+						<h6>Name</h6>
+						<p>Noah Bachmann</p>
+
+						<h6>From</h6>
+						<p>Switzerland</p>
+
+						<h6>Company</h6>
+						<p>Kauz Informatik Medien AG</p>
+
+						<h6>E-Mail</h6>
+						<Link
+							url="mailto:noah.bachmann@kauz.ch"
+							name="noah.bachmann@kauz.ch"/>
+
+
+						<h6>Download Contact</h6>
+						<Link
+							url="/contact-card.vcf"
+							name="Download"
+							download/>
+					</div>
 				</div>
 			)
 		case 1:
@@ -49,18 +58,33 @@ export default function Contact({ className = '' }) {
 	const [info, setInfo] = useState(0)
 	return(
 		<div id="contact" className={ `container container-md size-full p-20 mb-24 grid grid-cols-1 md:grid-cols-2 bg-secondary rounded-lg shadow ${className}` }>
-			<div className="relative">
-				<h3>Noah Bachmann</h3>
-				<div className="h-full flex flex-col justify-evenly items-end absolute right-0 text-secondary">
-					<button className="button-side" type="button" onClick={ () => setInfo(0) }>
+			<div className="flex flex-col justify-center items-center relative">
+				<h3 className="absolute top-12">Noah Bachmann</h3>
+				<Image
+					src="/noah.webp"
+					alt="me"
+					width={200}
+					height={200}
+					className="rounded-full"/>
+				<div className="h-full flex flex-col justify-evenly items-end absolute right-0 top-0 text-secondary">
+					<button
+						className="button-side"
+						onClick={ () => setInfo(0) }
+						aria-label="contact">
 						<UserIcon />
 					</button>
 
-					<button className="button-side flex" type="button" onClick={ () => setInfo(1) }>
+					<button
+						className="button-side"
+						onClick={ () => setInfo(1) }
+						aria-label="socials">
 						<AtIcon />
 					</button>
 
-					<button className="button-side" type="button" onClick={ () => setInfo(2) }>
+					<button
+						className="button-side"
+						onClick={ () => setInfo(2) }
+						aria-label="message me">
 						<MailIcon />
 					</button>
 				</div>
