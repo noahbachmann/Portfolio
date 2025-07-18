@@ -20,6 +20,7 @@ export default function ProjectCard({ project }) {
 						alt={ title }
 						width={ 600 }
 						height={ 600 }
+						loading="eager"
 						className="min-w-full object-cover rounded-t-lg" />
 				)) }
 			</div>

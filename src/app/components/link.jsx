@@ -22,6 +22,7 @@ export default function CustomLink({ url, name, index = 1, download = false }) {
 				<Link
 					href={ url }
 					target="_blank"
+					rel="noopener"
 					className="-mt-4 block">
 					<motion.div
 						key={index}
