@@ -13,22 +13,22 @@ function renderContent(tabNum) {
 				<div>
 					<h3 className="text-secondary">Contact</h3>
 					<div>
-						<h6>Name</h6>
+						<span className="h6">Name</span>
 						<p>Noah Bachmann</p>
 
-						<h6>From</h6>
+						<span className="h6">From</span>
 						<p>Switzerland</p>
 
-						<h6>Company</h6>
+						<span className="h6">Company</span>
 						<p>Kauz Informatik Medien AG</p>
 
-						<h6>E-Mail</h6>
+						<span className="h6">E-Mail</span>
 						<Link
 							url="mailto:noah.bachmann@kauz.ch"
 							name="noah.bachmann@kauz.ch"/>
 
 
-						<h6>Download Contact</h6>
+						<span className="h6">Download Contact</span>
 						<Link
 							url="/contact-card.vcf"
 							name="Download"
@@ -58,7 +58,7 @@ export default function Contact({ className = '' }) {
 	const [info, setInfo] = useState(0)
 	return(
 		<div id="contact" className={ `container container-md size-full p-20 mb-24 grid grid-cols-1 md:grid-cols-2 bg-secondary rounded-lg shadow ${className}` }>
-			<div className="flex flex-col justify-center items-center relative">
+			<div className="flex flex-col justify-center items-center relative text-primary">
 				<h3 className="absolute top-12">Noah Bachmann</h3>
 				<Image
 					src="/noah.webp"

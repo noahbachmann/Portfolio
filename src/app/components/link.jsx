@@ -21,7 +21,8 @@ export default function CustomLink({ url, name, index = 1, download = false }) {
 			!download ?
 				<Link
 					href={ url }
-					target="_blank">
+					target="_blank"
+					className="-mt-4 block">
 					<motion.div
 						key={index}
 						variants={VARIANTS}
@@ -38,7 +39,9 @@ export default function CustomLink({ url, name, index = 1, download = false }) {
 					</motion.div>
 				</Link>
 				:
-				<a href={ url }>
+				<a
+					href={ url }
+					className="-mt-4 block">
 					<motion.div
 						key={index}
 						variants={VARIANTS}

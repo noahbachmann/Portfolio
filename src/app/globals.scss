@@ -50,8 +50,9 @@ h2 {
 	@apply font-semibold uppercase;
 }
 
-h6 {
-	@apply text-[0.85rem] text-secondary mt-12;
+h6,
+.h6 {
+	@apply text-[0.85rem] text-secondary block mt-12;
 }
 
 p {
