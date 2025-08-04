@@ -1,6 +1,7 @@
 'use client'
 import { motion, useScroll, useMotionValueEvent } from 'motion/react'
 import { useState } from 'react'
+import { useWindowWidth } from '@react-hook/window-size'
 
 import Link from 'next/link'
 import Image from 'next/image'
@@ -9,6 +10,7 @@ import Burger from '@svg/burger-icon'
 
 export default function Navigation({ className='' }) {
 
+	const WINDOW_WIDTH = useWindowWidth()
 	const [isVisible, setIsVisible] = useState(false)
 	const toggleNavMenu = () => {
 		setIsVisible(prev => !prev)
@@ -44,7 +46,7 @@ export default function Navigation({ className='' }) {
 			<motion.div
 				className={ `w-full md:py-6 sticky top-0 z-50 bg-secondary text-primary ${ className }` }
 				variants={ VARIANTS }
-				animate={ isVisible ? '' : barState }
+				animate={ WINDOW_WIDTH < 768 ? '' : barState }
 				transition={{ ease: 'easeIn', duration: 0.35 }}
 				whileHover="visible">
 
@@ -59,7 +61,7 @@ export default function Navigation({ className='' }) {
 				</button>
 
 				<div className={ `container container-lg h-52 px-20 flex max-md:flex-col md:items-center md:justify-between
-					max-md:justify-center max-md:size-full max-md:fixed max-md:inset-y-0 transition-transform ease-out duration-300 ${isVisible ? 'max-md:translate-x-0' : 'max-md:translate-x-full'} max-md:bg-secondary` }>
+					max-md:justify-center max-md:size-full max-md:fixed max-md:inset-y-0 transition-transform ease-out duration-300 ${isVisible ? 'max-md:translate-x-0' : 'max-md:translate-x-full'} max-md:bg-secondary/85 max-md:backdrop-blur` }>
 					<Image
 						src="/controller.webp"
 						alt="logo"
