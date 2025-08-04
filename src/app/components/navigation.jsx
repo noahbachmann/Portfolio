@@ -5,7 +5,22 @@ import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 
+import Burger from '@svg/burger-icon'
+
 export default function Navigation({ className='' }) {
+
+	const [isVisible, setIsVisible] = useState(false)
+	const toggleNavMenu = () => {
+		setIsVisible(prev => !prev)
+		if(!isVisible){
+			document.body.classList.add('overflow-y-hidden')
+		}
+		else{
+			document.body.classList.remove('overflow-y-hidden')
+		}
+	}
+
+	const closeNavMenu = () => setIsVisible(false)
 	const { scrollY } = useScroll()
 	const [barState, setBarState] = useState('visible')
 	const VARIANTS = {
@@ -24,33 +39,60 @@ export default function Navigation({ className='' }) {
 	return(
 		<>
 			<motion.div
-				className={ `w-full py-6 sticky top-0 z-50 bg-secondary text-primary ${ className }` }
+				className={ `w-full md:py-6 sticky top-0 z-50 bg-secondary text-primary ${ className }` }
 				variants={ VARIANTS }
-				animate={ barState }
+				animate={ isVisible ? '' : barState }
 				transition={{ ease: 'easeIn', duration: 0.35 }}
 				whileHover="visible">
-					<div className="container container-lg h-52 px-20 flex items-center justify-between">
+
+				<button
+					onClick={ toggleNavMenu }
+					className="w-32 hidden max-md:block absolute right-8 top-8 text-black z-50"
+					aria-label="toggle nav-menu"
+					aria-controls="navlist"
+					aria-expanded={ isVisible }>
+
+					<Burger isOpen={ isVisible }/>
+				</button>
+
+				<div className={ `container container-lg h-52 px-20 flex max-md:flex-col md:items-center md:justify-between
+					max-md:justify-center max-md:size-full max-md:fixed max-md:inset-y-0 transition-transform ease-out duration-300 ${isVisible ? 'max-md:translate-x-0' : 'max-md:translate-x-full'} max-md:bg-secondary` }>
 					<Image
 						src="/controller.webp"
 						alt="logo"
-						className="h-full w-auto"
+						className="max-md:hidden h-full w-auto"
 						width={100}
 						height={100}
 						blurDataURL="data:..."
 						placeholder="blur" />
 
-					<nav className="flex">
-						<ul className="flex gap-40">
+					<nav
+						id="navlist"
+        				data-visible={ isVisible }>
+
+						<ul className="flex max-md:flex-col gap-4 md:gap-40">
 							<li className="hover-up">
-								<Link href="#projects">Projects</Link>
+								<Link
+									href="#projects"
+									onClick={ closeNavMenu }>
+									Projects
+								</Link>
 							</li>
 
 							<li className="hover-up">
-								<Link href="#about">About</Link>
+								<Link
+									href="#about"
+									onClick={ closeNavMenu }>
+									About
+								</Link>
 							</li>
 
 							<li className="hover-up">
-								<Link href="#contact">Contact</Link>
+								<Link
+									href="#contact"
+									onClick={ closeNavMenu }>
+									Contact
+								</Link>
 							</li>
 						</ul>
 					</nav>
