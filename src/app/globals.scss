@@ -92,7 +92,7 @@ hr {
 }
 
 .button-side {
-	@apply lg:-mr-1 px-12 py-8 cursor-pointer bg-primary max-lg:rounded-t-l lg:rounded-l-l hover:scale-104 active:text-white active:scale-100 duration-200 ease-out;
+	@apply md:-mr-1 px-12 py-8 cursor-pointer bg-primary max-md:rounded-t-l md:rounded-l-l hover:scale-104 active:text-white active:scale-100 duration-200 ease-out;
 }
 
 input,
