@@ -13,7 +13,7 @@
 	--radius-md: 0.6rem;
 	--radius-sm: 0.25rem;
 
-	--shadow: 2px 2px rgba(0, 0, 0, 0.15);
+	--shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
 	--shadow-rev: -2px -2px rgba(0, 0, 0, 0.15);
 
 	--shadow-inset-right: inset -5px 0 4px rgba(0, 0, 0, 0.1);
@@ -95,7 +95,7 @@ hr {
 }
 
 .button-side {
-	@apply px-12 py-8 -mr-1 cursor-pointer bg-primary max-md:rounded-t-l md:rounded-l-l max-md:shadow-(--shadow-inset-bottom) md:shadow-(--shadow-inset-right) hover:scale-104 hover:shadow-none max-md:active:shadow-(--shadow-inset-bottom) md:active:shadow-(--shadow-inset-right) active:scale-100 duration-200;
+	@apply px-12 py-8 -mr-1 cursor-pointer bg-primary max-md:rounded-t-l md:rounded-l-l max-md:shadow-inset-bottom md:shadow-inset-right hover:scale-104 hover:shadow-none max-md:active:shadow-inset-bottom md:active:shadow-inset-right active:scale-100 duration-200;
 }
 
 input,
