@@ -19,8 +19,11 @@ export default function Navigation({ className='' }) {
 			document.body.classList.remove('overflow-y-hidden')
 		}
 	}
+	const closeNavMenu = () => {
+		setIsVisible(false)
+		document.body.classList.remove('overflow-y-hidden')
+	}
 
-	const closeNavMenu = () => setIsVisible(false)
 	const { scrollY } = useScroll()
 	const [barState, setBarState] = useState('visible')
 	const VARIANTS = {
