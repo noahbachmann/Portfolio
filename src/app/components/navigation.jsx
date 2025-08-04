@@ -50,7 +50,7 @@ export default function Navigation({ className='' }) {
 
 				<button
 					onClick={ toggleNavMenu }
-					className="w-32 hidden max-md:block absolute right-8 top-8 text-black z-50"
+					className={ `w-32 hidden max-md:block absolute right-8 top-8 z-50 ${ isVisible ? '' : 'text-black' }` }
 					aria-label="toggle nav-menu"
 					aria-controls="navlist"
 					aria-expanded={ isVisible }>

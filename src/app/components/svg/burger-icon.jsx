@@ -1,17 +1,12 @@
+import { motion } from 'motion/react'
+
 export default function Burger({ isOpen = false }){
 	return(
-		<>
-			{ isOpen ?
-				(
-					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
-						<path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
-					</svg>
-				):(
-					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
-						<path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-					</svg>
-				)
-			}
-		</>
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+			<motion.path
+				animate={ isOpen ? { rotate: 45, y: -4 } : { rotate: 0 }} d="M3 16h15"/>
+			<motion.path
+				animate={ isOpen ? { rotate: -45, y: 4 } : { rotate: 0 }} d="M3 8h15"/>
+		</svg>
 	)
 }
