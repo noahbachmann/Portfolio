@@ -2,6 +2,7 @@
 import Chart from 'chart.js/auto'
 import min from 'lodash/min'
 import { useRef, useEffect } from 'react'
+import { useWindowWidth } from '@react-hook/window-size'
 
 const COLORS = [
 	'rgba(167, 0, 222, 0.6)',
@@ -47,6 +48,7 @@ export default function StackChart(){
 	const CANVAS_REF = useRef(null)
 	const CHART_REF = useRef(null)
 	const PREV_COLOR = useRef(null)
+	const WINDOW_WIDTH = useWindowWidth()
 
 	const BASE_DATA = {
 		labels: ['C#', 'JavaScript', 'HTML/CSS', 'SQL', 'Python'],
@@ -116,12 +118,9 @@ export default function StackChart(){
 		options: {
 			responsive: true,
 			maintainAspectRatio: false,
-			resizeDelay: 700,
+			resizeDelay: 600,
 			layout:{
-				padding:{
-					top:20,
-					bottom: 20,
-				}
+				padding:20,
 			},
 			elements:{
 				arc:{
@@ -136,15 +135,15 @@ export default function StackChart(){
 			},
 			plugins:{
 				legend:{
-					position:'left',
-					align:'start',
+					position: WINDOW_WIDTH > 700 ? 'left' : 'top',
+					align:WINDOW_WIDTH > 700 ? 'start' : 'center',
 					labels:{
 						color:'#000',
-						padding:15,
+						padding:12,
 						textAlign:'start',
 						boxHeight:20,
 						font:{
-							size: 16,
+							size: 15,
 						}
 					},
 					title:{
