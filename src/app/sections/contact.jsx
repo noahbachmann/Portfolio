@@ -57,16 +57,16 @@ function renderContent(tabNum) {
 export default function Contact({ className = '' }) {
 	const [info, setInfo] = useState(0)
 	return(
-		<div id="contact" className={ `container container-md size-full p-20 mb-24 grid grid-cols-1 md:grid-cols-2 bg-secondary rounded-lg shadow ${className}` }>
-			<div className="flex flex-col justify-center items-center relative text-primary">
-				<h3 className="absolute top-12">Noah Bachmann</h3>
+		<div id="contact" className={ `container container-md size-full p-20 mb-24 grid grid-cols-1 lg:grid-cols-2 bg-secondary lg:rounded-lg shadow ${className}` }>
+			<div className="min-h-400 flex flex-col justify-center items-center relative text-primary">
+				<h3 className="absolute top-24">Noah Bachmann</h3>
 				<Image
 					src="/noah.webp"
 					alt="me"
 					width={200}
 					height={200}
 					className="rounded-full"/>
-				<div className="h-full flex flex-col justify-evenly items-end absolute right-0 top-0 text-secondary">
+				<div className="w-full lg:h-full flex lg:flex-col justify-evenly items-end absolute max-lg:bottom-0 lg:right-0 lg:top-0 text-secondary">
 					<button
 						className="button-side"
 						onClick={ () => setInfo(0) }
@@ -89,7 +89,7 @@ export default function Contact({ className = '' }) {
 					</button>
 				</div>
 			</div>
-			<div className="min-h-500 bg-primary p-24 rounded-lg">
+			<div className="min-h-500 p-24 bg-primary rounded-lg">
 				{ renderContent(info) }
 			</div>
 		</div>
