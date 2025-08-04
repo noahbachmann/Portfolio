@@ -68,28 +68,28 @@ export default function Contact({ className = '' }) {
 					className="rounded-full"/>
 				<div className="w-full md:h-full flex md:flex-col justify-evenly items-end absolute max-md:bottom-0 md:right-0 md:top-0 text-secondary">
 					<button
-						className="button-side"
+						className={`button-side ${info === 0 ? 'shadow-none! text-accent': ''}`}
 						onClick={ () => setInfo(0) }
 						aria-label="contact">
 						<UserIcon />
 					</button>
 
 					<button
-						className="button-side"
+						className={`button-side ${info === 1 ? 'shadow-none! text-accent': ''}`}
 						onClick={ () => setInfo(1) }
 						aria-label="socials">
 						<AtIcon />
 					</button>
 
 					<button
-						className="button-side"
+						className={`button-side ${info === 2 ? 'shadow-none! text-accent': ''}`}
 						onClick={ () => setInfo(2) }
 						aria-label="message me">
 						<MailIcon />
 					</button>
 				</div>
 			</div>
-			<div className="min-h-400 md:min-h-500 p-24 bg-primary md:rounded-lg">
+			<div className="min-h-400 md:min-h-500 p-24 bg-primary md:rounded-lg z-10">
 				{ renderContent(info) }
 			</div>
 		</div>
