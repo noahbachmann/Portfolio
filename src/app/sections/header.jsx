@@ -15,7 +15,7 @@ export default function Header({ className = '' }) {
 					<div className="size-full rounded-lg absolute inset-0 bg-primary opacity-60 backdrop-blur -z-10"/>
 					<h1>My Portfolio</h1>
 					<hr className="w-128 h-3 mb-12 rounded-[2px]"/>
-					<p className="max-w-500 text-lead">I have a huge passion for computers, programming and everything around it. I hope you enjoy this website!</p>
+					<p className="max-w-500 text-lead">I have a huge passion for computers, programming and everything around it. I hope you enjoy my website!</p>
 				</div>
 			</div>
 		</div>
