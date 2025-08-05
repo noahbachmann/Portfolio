@@ -1,10 +1,10 @@
 'use client'
 import { useState } from 'react'
 import Image from 'next/image'
-import { ContactForm, Link } from '@components'
-import AtIcon from '@svg/at-icon'
-import MailIcon from '@svg/mail-icon'
-import UserIcon from '@svg/user-icon'
+
+import ContactForm from '@components/contact-form'
+import Link from '@components/link'
+import { At, Mail, User, Twitter, Instagram, LinkedIn } from '@svg'
 
 function renderContent(tabNum) {
 	switch (tabNum) {
@@ -58,34 +58,39 @@ export default function Contact({ className = '' }) {
 	const [info, setInfo] = useState(0)
 	return(
 		<div id="contact" className={ `container container-md size-full max-md:px-0! md:p-20 md:mb-36 grid grid-cols-1 md:grid-cols-2 bg-secondary lg:rounded-lg shadow ${className}` }>
-			<div className="min-h-350 md:min-h-400 flex flex-col justify-center items-center relative text-primary">
-				<h3 className="absolute top-16 md:top-24">Noah Bachmann</h3>
+			<div className="min-h-350 md:min-h-400 py-24 flex flex-col justify-between items-center relative text-primary">
+				<h3>Noah Bachmann</h3>
 				<Image
 					src="/noah.webp"
 					alt="me"
 					width={180}
 					height={180}
 					className="rounded-full"/>
+				<div className="flex gap-20 *:w-40">
+					<LinkedIn/>
+					<Instagram/>
+					<Twitter/>
+				</div>
 				<div className="w-full md:h-full flex md:flex-col justify-evenly items-end absolute max-md:bottom-0 md:right-0 md:top-0 text-secondary">
 					<button
 						className={`button-side ${info === 0 ? 'shadow-none! text-accent': ''}`}
 						onClick={ () => setInfo(0) }
 						aria-label="contact">
-						<UserIcon />
+						<User />
 					</button>
 
 					<button
 						className={`button-side ${info === 1 ? 'shadow-none! text-accent': ''}`}
 						onClick={ () => setInfo(1) }
 						aria-label="socials">
-						<AtIcon />
+						<At />
 					</button>
 
 					<button
 						className={`button-side ${info === 2 ? 'shadow-none! text-accent': ''}`}
 						onClick={ () => setInfo(2) }
 						aria-label="message me">
-						<MailIcon />
+						<Mail />
 					</button>
 				</div>
 			</div>

@@ -1,8 +1,8 @@
 'use client'
 import { motion } from 'motion/react'
 import Link from 'next/link'
-import Arrows from '@svg/arrows'
-import Download from '@svg/download'
+
+import { Arrows, Download } from '@svg'
 
 export default function CustomLink({ url, name, index = 1, download = false }) {
 	const VARIANTS = {

@@ -3,7 +3,7 @@ import { motion, useTransform, useScroll, useSpring } from 'motion/react'
 import { useState, useRef, useEffect } from 'react'
 import { useWindowWidth } from '@react-hook/window-size'
 
-import { ProjectCard } from '@components'
+import ProjectCard from '@components/project-card'
 import data from '@/data/projects.json'
 
 export default function Projects({ className = '' }) {

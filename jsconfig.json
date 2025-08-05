@@ -4,11 +4,11 @@
 			"@/*": [
 				"./src/*"
 			],
-			"@components": [
-				"./src/app/components"
+			"@components/*": [
+				"./src/app/components/*"
 			],
-			"@svg/*": [
-				"./src/app/components/svg/*"
+			"@svg": [
+				"./src/app/components/svg"
 			],
 			"@api/*": [
 				"./src/app/api/*"
