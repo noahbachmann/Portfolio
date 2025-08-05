@@ -1,7 +1,0 @@
-export { default as ContactForm } from './contact-form'
-export { default as Footer } from './footer'
-export { default as Link } from './link'
-export { default as MatrixCanvas } from './matrix/matrix-canvas'
-export { default as Navigation } from './navigation'
-export { default as ProjectCard } from './project-card'
-export { default as StackChart } from './stack-chart'
