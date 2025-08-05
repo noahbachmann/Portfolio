@@ -95,7 +95,7 @@ hr {
 }
 
 .button-side {
-	@apply px-12 py-8 -mr-1 cursor-pointer bg-primary max-md:rounded-t-l md:rounded-l-l max-md:shadow-inset-bottom md:shadow-inset-right hover:scale-104 hover:shadow-none hover:text-accent max-md:active:shadow-inset-bottom md:active:shadow-inset-right active:scale-100 duration-200;
+	@apply px-9 md:px-12 py-6 md:py-8 -mr-1 cursor-pointer bg-primary max-md:rounded-t-l md:rounded-l-l max-md:shadow-inset-bottom md:shadow-inset-right hover:scale-104 hover:shadow-none hover:text-accent max-md:active:shadow-inset-bottom md:active:shadow-inset-right active:scale-100 duration-200;
 }
 
 input,

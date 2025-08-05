@@ -5,7 +5,7 @@ import Image from 'next/image'
 import ContactForm from '@components/contact-form'
 import Link from '@components/link'
 import SocialLink from '@components/social-link'
-import { At, Mail, User } from '@svg'
+import { Mail, User } from '@svg'
 
 function renderContent(tabNum) {
 	switch (tabNum) {
@@ -40,7 +40,7 @@ function renderContent(tabNum) {
 		case 1:
 			return (
 				<div className="size-full flex flex-col">
-					<h3 className="text-secondary">Send me a message here</h3>
+					<h3 className="text-secondary">Send me a message!</h3>
 					<ContactForm />
 				</div>
 			)
@@ -52,8 +52,8 @@ function renderContent(tabNum) {
 export default function Contact({ className = '' }) {
 	const [info, setInfo] = useState(0)
 	return(
-		<div id="contact" className={ `container container-md size-full max-md:px-0! md:p-20 md:mb-36 grid grid-cols-1 md:grid-cols-2 bg-secondary lg:rounded-lg shadow ${className}` }>
-			<div className="min-h-350 md:min-h-400 py-24 flex flex-col justify-between items-center relative text-primary">
+		<div id="contact" className={ `container container-sm size-full max-md:px-0! md:p-20 md:mb-36 grid grid-cols-1 md:grid-cols-2 bg-secondary lg:rounded-lg shadow ${className}` }>
+			<div className="min-h-350 md:min-h-400 py-24 max-md:pb-45 flex flex-col justify-between items-center relative text-primary">
 				<h3>Noah Bachmann</h3>
 				<Image
 					src="/noah.webp"
@@ -61,7 +61,7 @@ export default function Contact({ className = '' }) {
 					width={180}
 					height={180}
 					className="rounded-full"/>
-				<div className="flex gap-20 *:w-40 z-20">
+				<div className="flex gap-15 *:w-40 z-20">
 					<SocialLink
 						url="https://github.com/noahbachmann"
 						social="github"/>
