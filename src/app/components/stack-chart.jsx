@@ -135,7 +135,7 @@ export default function StackChart(){
 			},
 			plugins:{
 				legend:{
-					position: WINDOW_WIDTH > 700 ? 'left' : 'top',
+					position: WINDOW_WIDTH > 700 ? 'left' : 'bottom',
 					align:WINDOW_WIDTH > 700 ? 'start' : 'center',
 					labels:{
 						color:'#000',
@@ -151,9 +151,12 @@ export default function StackChart(){
 						text:'SKILLSET',
 						color:'#000',
 						font:{
-							size: 24,
+							size: 20,
 							weight:'bold',
-						}
+						},
+						padding:{
+							top: WINDOW_WIDTH > 700 ? 0 : 40,
+						},
 					},
 					events: ['mousemove', 'mouseout', 'click'],
 					onHover: (_, legendItem, legend) => {
@@ -165,6 +168,7 @@ export default function StackChart(){
 						HandleLabelHover(legend, legendItem.index, PREV_COLOR, CHART_REF)
 					},
 					onClick: (_, legendItem, legend) => {
+						console.log(CHART_REF)
 						if(legendItem.length != 0) {
 							HandleLabelHover(legend, legendItem.index, PREV_COLOR, CHART_REF)
 						}
