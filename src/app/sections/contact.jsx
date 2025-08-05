@@ -52,7 +52,7 @@ function renderContent(tabNum) {
 export default function Contact({ className = '' }) {
 	const [info, setInfo] = useState(0)
 	return(
-		<div id="contact" className={ `container container-sm size-full max-md:px-0! md:p-20 md:mb-36 grid grid-cols-1 md:grid-cols-2 bg-secondary lg:rounded-lg shadow ${className}` }>
+		<div id="contact" className={ `container container-sm size-full max-md:px-0! md:p-20 md:mb-36 grid grid-cols-1 md:grid-cols-2 bg-secondary md:rounded-lg shadow ${className}` }>
 			<div className="min-h-350 md:min-h-400 py-24 max-md:pb-45 flex flex-col justify-between items-center relative text-primary">
 				<h3>Noah Bachmann</h3>
 				<Image
