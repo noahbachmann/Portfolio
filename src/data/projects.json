@@ -3,9 +3,7 @@
 		"title": "Astronautical",
 		"description": "I created this game using Unity, C# and Photoshop. It is a 2D Pixel-Art-Game comparable to titles like 'Jetpack Joyride'. You can download it for free on Google Play.",
 		"images": [
-			"/astronautical.webp",
-			"/astro_1.webp",
-			"/astro_2.webp"
+			"/projects/astro_1.webp"
 		],
 		"topics": [
 			"Unity",
@@ -21,7 +19,7 @@
 		"title": "Claimspartner CH",
 		"description": "Early on in my career, I got the chance to work on a project for Claimspartner CH, a swiss insurance company. It was a very interesting to work on a real-world project and I gained a lot of experience.",
 		"images": [
-			"/claimspartner.webp"
+			"/projects/claimspartner.webp"
 		],
 		"topics": [
 			"HTML",
@@ -37,7 +35,7 @@
 		"title": "WordPress",
 		"description": "As an Apprentice, I worked on a lot of WordPress projects. I learned how to utilize and create custom themes, plugins and Gutenberg blocks.",
 		"images": [
-			"/wordpress.webp"
+			"/projects/wordpress.webp"
 		],
 		"topics": [
 			"WordPress",
@@ -55,7 +53,7 @@
 		"title": "More Projects",
 		"description": "Over the course of my education, I have worked on many more projects. Some of them are not listed here, but you can find more on my GitHub profile.",
 		"images": [
-			"/github.webp"
+			"/projects/github.webp"
 		],
 		"topics": [
 			"GitHub",
@@ -70,7 +68,7 @@
 		"title": "More Projects",
 		"description": "Over the course of my education, I have worked on many more projects. Some of them are not listed here, but you can find more on my GitHub profile.",
 		"images": [
-			"/astronautical.webp"
+			"/projects/astronautical.webp"
 		],
 		"topics": [
 			"GitHub",

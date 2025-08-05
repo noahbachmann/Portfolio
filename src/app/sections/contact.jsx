@@ -31,7 +31,7 @@ function renderContent(tabNum) {
 
 						<span className="h6">Download Contact</span>
 						<Link
-							url="/contact-card.vcf"
+							url="/contact/contact-card.vcf"
 							name="Download"
 							download/>
 					</div>
@@ -53,10 +53,10 @@ export default function Contact({ className = '' }) {
 	const [info, setInfo] = useState(0)
 	return(
 		<div id="contact" className={ `container container-sm size-full max-md:px-0! md:p-20 md:mb-36 grid grid-cols-1 md:grid-cols-2 bg-secondary md:rounded-lg shadow ${className}` }>
-			<div className="min-h-350 md:min-h-400 py-24 max-md:pb-45 flex flex-col justify-between items-center relative text-primary">
+			<div className="max-md:min-h-350 py-24 max-md:pb-45 flex flex-col justify-between items-center relative text-primary">
 				<h3>Noah Bachmann</h3>
 				<Image
-					src="/noah.webp"
+					src="/contact/noah.webp"
 					alt="me"
 					width={180}
 					height={180}
@@ -95,7 +95,7 @@ export default function Contact({ className = '' }) {
 					</button>
 				</div>
 			</div>
-			<div className="min-h-400 md:min-h-500 p-24 bg-primary md:rounded-lg rounded-bl-none! z-10">
+			<div className="min-h-400 md:min-h-460 p-24 bg-primary md:rounded-lg rounded-bl-none! z-10">
 				{ renderContent(info) }
 			</div>
 		</div>
