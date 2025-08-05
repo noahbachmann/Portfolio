@@ -4,7 +4,8 @@ import Image from 'next/image'
 
 import ContactForm from '@components/contact-form'
 import Link from '@components/link'
-import { At, Mail, User, Twitter, Instagram, LinkedIn } from '@svg'
+import SocialLink from '@components/social-link'
+import { At, Mail, User } from '@svg'
 
 function renderContent(tabNum) {
 	switch (tabNum) {
@@ -38,14 +39,8 @@ function renderContent(tabNum) {
 			)
 		case 1:
 			return (
-				<div>
-					<h3 className="text-secondary">My Socials</h3>
-				</div>
-			)
-		case 2:
-			return (
 				<div className="size-full flex flex-col">
-					<h3 className="text-secondary">Send me something</h3>
+					<h3 className="text-secondary">Send me a message here</h3>
 					<ContactForm />
 				</div>
 			)
@@ -66,35 +61,41 @@ export default function Contact({ className = '' }) {
 					width={180}
 					height={180}
 					className="rounded-full"/>
-				<div className="flex gap-20 *:w-40">
-					<LinkedIn/>
-					<Instagram/>
-					<Twitter/>
+				<div className="flex gap-20 *:w-40 z-20">
+					<SocialLink
+						url="https://github.com/noahbachmann"
+						social="github"/>
+
+					<SocialLink
+						url="https://www.linkedin.com/in/noah-bachmann-27tp/"
+						social="linkedin"/>
+
+					<SocialLink
+						url="https://x.com/trainpaths"
+						social="twitter"/>
+
+					<SocialLink
+						url="https://instagram.com/"
+						social="instagram"/>
+
 				</div>
-				<div className="w-full md:h-full flex md:flex-col justify-evenly items-end absolute max-md:bottom-0 md:right-0 md:top-0 text-secondary">
+				<div className="w-full md:h-full max-md:mr-20 flex md:flex-col gap-10 justify-end items-end absolute max-md:bottom-0 md:right-0 md:top-0 text-secondary">
 					<button
-						className={`button-side ${info === 0 ? 'shadow-none! text-accent': ''}`}
+						className={`button-side ${info === 0 ? 'shadow-none! text-white!': ''}`}
 						onClick={ () => setInfo(0) }
 						aria-label="contact">
 						<User />
 					</button>
 
 					<button
-						className={`button-side ${info === 1 ? 'shadow-none! text-accent': ''}`}
+						className={`button-side ${info === 1 ? 'shadow-none! text-white!': ''}`}
 						onClick={ () => setInfo(1) }
-						aria-label="socials">
-						<At />
-					</button>
-
-					<button
-						className={`button-side ${info === 2 ? 'shadow-none! text-accent': ''}`}
-						onClick={ () => setInfo(2) }
 						aria-label="message me">
 						<Mail />
 					</button>
 				</div>
 			</div>
-			<div className="min-h-400 md:min-h-500 p-24 bg-primary md:rounded-lg z-10">
+			<div className="min-h-400 md:min-h-500 p-24 bg-primary md:rounded-lg rounded-bl-none! z-10">
 				{ renderContent(info) }
 			</div>
 		</div>
