@@ -3,19 +3,14 @@ import { RateLimiterMemory } from 'rate-limiter-flexible'
 import { NextResponse } from 'next/server'
 import { GetUserIP } from '../getIp'
 
-const EMAIL = 'nedvergesse@gmail.com'
-const GOOGLE_CLIENT_ID = '222749198171-k93uii1b36qs4i8j3ri75g64851lvr6q.apps.googleusercontent.com'
-const GOOGLE_CLIENT_SECRET = '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'
-const GOOGLE_REFRESH_TOKEN = '1//04c0lBd2Mu54RCgYIARAAGAQSNwF-L9IrHR4DrB4PxXtyqW9SF7XbG7UrOlCQq3vtN3GHl323_tL70ozZHauDQXYvjm8YA8X5Qp8'
-
 const TRANSPORT = nodemailer.createTransport({
 	service: 'gmail',
 	auth: {
 		type: 'OAuth2',
-		user: 'noah.bachmann@kauz.ch',
-		clientId: GOOGLE_CLIENT_ID,
-		clientSecret: GOOGLE_CLIENT_SECRET,
-		refreshToken: GOOGLE_REFRESH_TOKEN,
+		user: process.env.SENDER,
+		clientId: process.env.GOOGLE_CLIENT_ID,
+		clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+		refreshToken: process.env.GOOGLE_REFRESH_TOKEN,
 	},
 })
 
@@ -40,8 +35,8 @@ export async function POST(request){
 	} = await request.json()
 
 	const MAIL_OPTIONS = {
-		from: EMAIL,
-		to: EMAIL,
+		from: process.env.SENDER,
+		to: process.env.RECEIVER,
 		subject: `from: ${ name }, about: ${ subject }`,
 		text: message,
 	}
@@ -52,7 +47,7 @@ export async function POST(request){
 				if (!err) {
 					resolve('Email sent')
 				} else {
-					reject(err.message)
+					console.log(err.message)
 				}
 			})
 		return NextResponse.json({ message: 'Email sent' })
