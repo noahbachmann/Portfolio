@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
 
-import { Link } from '.'
+import Link from './link'
 
 export default function ProjectCard({ project }) {
 	const {
