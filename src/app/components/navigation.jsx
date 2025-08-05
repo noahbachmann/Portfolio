@@ -14,12 +14,7 @@ export default function Navigation({ className='' }) {
 	const [isVisible, setIsVisible] = useState(false)
 	const toggleNavMenu = () => {
 		setIsVisible(prev => !prev)
-		if(!isVisible){
-			document.body.classList.add('overflow-y-hidden')
-		}
-		else{
-			document.body.classList.remove('overflow-y-hidden')
-		}
+		document.body.classList.toggle('overflow-y-hidden')
 	}
 	const closeNavMenu = () => {
 		setIsVisible(false)

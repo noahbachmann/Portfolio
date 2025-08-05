@@ -5,13 +5,14 @@ import Image from 'next/image'
 import ContactForm from '@components/contact-form'
 import Link from '@components/link'
 import SocialLink from '@components/social-link'
-import { Mail, User } from '@svg'
+import ModalQrCode from '@components/modal-qrcode'
+import { Mail, User, QR } from '@svg'
 
-function renderContent(tabNum) {
+function renderContent(tabNum, onQrClick) {
 	switch (tabNum) {
 		case 0:
 			return(
-				<div>
+				<div className="h-full relative">
 					<h3 className="text-secondary">Contact</h3>
 					<div>
 						<span className="h6">Name</span>
@@ -35,6 +36,11 @@ function renderContent(tabNum) {
 							name="Download"
 							download/>
 					</div>
+					<div
+						onClick={ onQrClick }
+						className="size-36 absolute right-4 bottom-4 border-2 border-secondary text-secondary rounded hover:scale-108 hover:border-accent hover:text-accent active:scale-100 active:border-white active:text-white duration-150 ease-in">
+						<QR />
+					</div>
 				</div>
 			)
 		case 1:
@@ -50,9 +56,19 @@ function renderContent(tabNum) {
 }
 
 export default function Contact({ className = '' }) {
+
 	const [info, setInfo] = useState(0)
+	const [showModal, setShowModal] = useState(false)
+	const toggleModalMenu = () => {
+		setShowModal(prev => !prev)
+		document.body.classList.toggle('overflow-y-hidden')
+	}
+
 	return(
 		<div id="contact" className={ `container container-sm size-full max-md:px-0! md:p-20 md:mb-36 grid grid-cols-1 md:grid-cols-2 bg-secondary md:rounded-lg shadow ${className}` }>
+
+			{ showModal && <ModalQrCode onClose={ () => toggleModalMenu() }/> }
+
 			<div className="max-md:min-h-350 py-24 max-md:pb-45 flex flex-col justify-between items-center relative text-primary">
 				<h3>Noah Bachmann</h3>
 				<Image
@@ -96,7 +112,7 @@ export default function Contact({ className = '' }) {
 				</div>
 			</div>
 			<div className="min-h-400 md:min-h-460 p-24 bg-primary md:rounded-lg rounded-bl-none! z-10">
-				{ renderContent(info) }
+				{ renderContent(info, () => toggleModalMenu()) }
 			</div>
 		</div>
 	)
