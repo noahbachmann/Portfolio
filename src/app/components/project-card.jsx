@@ -11,7 +11,7 @@ export default function ProjectCard({ project }) {
 		links } = project
 
 	return(
-		<div className="flex flex-col bg-primary rounded-lg shadow relative">
+		<div className="flex flex-col bg-primary rounded-lg relative">
 			<div className="w-[95vw] max-w-400 md:min-w-500 h-250 md:h-300 flex overflow-hidden">
 				{ images.map((image, index) => (
 					<Image

@@ -13,7 +13,7 @@ export default function Footer({ className = '' }) {
 		document.body.classList.toggle('overflow-y-hidden')
 	}
 	return (
-		<footer className={`py-32 md:py-48 ${className}`}>
+		<footer className={`py-32 md:py-48 z-20 shadow-top ${className}`}>
 			<div className="container container-lg w-full pb-50 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16">
 				<div className="flex flex-col">
 					<h3>Noah Bachmann</h3>

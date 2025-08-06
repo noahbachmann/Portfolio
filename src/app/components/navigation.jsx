@@ -39,7 +39,7 @@ export default function Navigation({ className='' }) {
 	return(
 		<>
 			<motion.div
-				className={ `w-full md:py-6 sticky top-0 z-50 bg-secondary text-primary ${ className }` }
+				className={ `w-full md:py-6 sticky top-0 z-50 bg-secondary text-primary shadow-bottom ${ className }` }
 				variants={ VARIANTS }
 				animate={ WINDOW_WIDTH < 768 ? '' : barState }
 				transition={{ ease: 'easeIn', duration: 0.35 }}

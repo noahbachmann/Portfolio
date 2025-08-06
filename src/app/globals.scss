@@ -13,11 +13,13 @@
 	--radius-md: 0.6rem;
 	--radius-sm: 0.25rem;
 
-	--shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
+	--shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.15);
 	--shadow-rev: -2px -2px rgba(0, 0, 0, 0.15);
 
 	--shadow-inset-right: inset -5px 0 4px rgba(0, 0, 0, 0.1);
 	--shadow-inset-bottom: inset 0 -5px 4px rgba(0, 0, 0, 0.1);
+	--shadow-top: 0 -3px 2px rgba(0, 0, 0, 0.16);
+	--shadow-bottom: 0 3px 2px rgba(0, 0, 0, 0.16);
 
 	--color-primary: #8DC294;
 	--color-secondary: #254d32;
