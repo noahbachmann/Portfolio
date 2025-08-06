@@ -6,13 +6,15 @@ import { Arrows, Download } from '@svg'
 
 export default function CustomLink({ url, name, index = 1, download = false }) {
 	const VARIANTS = {
-		rest: { color: '#254d32', x: -20 },
-		hover: { color: '#76104F', x: 0 },
+		rest: { scale: 1, color: '#254d32', x: -20 },
+		hover: { scale: 1, color: '#76104F', x: 0 },
+		active: { scale: 0.98, color: '#ddd8c4' },
 	}
 
 	const ARROW_VARIANTS = {
-		rest: { opacity: 0 },
-		hover: { opacity: 1 },
+		rest: { scale: 1, color: '#76104F', opacity: 0 },
+		hover: { scale: 1, color: '#76104F', opacity: 1 },
+		active: { scale: 0.98, color: '#ddd8c4' }
 	}
 
 	return(
@@ -25,11 +27,12 @@ export default function CustomLink({ url, name, index = 1, download = false }) {
 					rel="noopener"
 					className="-mt-4 block">
 					<motion.div
-						key={index}
-						variants={VARIANTS}
+						key={ index }
+						variants={ VARIANTS }
 						initial="rest"
 						animate="rest"
 						whileHover="hover"
+						whileTap="active"
 						transition={{ ease: 'easeIn', duration: 0.2 }}
 						className="flex font-semibold">
 
@@ -45,7 +48,7 @@ export default function CustomLink({ url, name, index = 1, download = false }) {
 					className="-mt-4 block">
 					<motion.div
 						key={index}
-						variants={VARIANTS}
+						variants={ VARIANTS }
 						initial="rest"
 						animate="rest"
 						whileHover="hover"
