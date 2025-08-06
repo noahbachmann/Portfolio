@@ -8,6 +8,7 @@ export default function ContactInfo({ tabNum, onQrClick }) {
 			return(
 				<div className="h-full relative">
 					<h3 className="text-secondary">Contact</h3>
+
 					<div>
 						<span className="h6">Name</span>
 						<p>Noah Bachmann</p>
@@ -30,6 +31,7 @@ export default function ContactInfo({ tabNum, onQrClick }) {
 							name="Download"
 							download/>
 					</div>
+
 					<div
 						onClick={ onQrClick }
 						className="size-36 absolute right-4 bottom-4 border-2 border-secondary text-secondary rounded hover:scale-108 hover:border-accent hover:text-accent cursor-pointer active:scale-100 active:border-white active:text-white duration-150 ease-in">
@@ -41,6 +43,7 @@ export default function ContactInfo({ tabNum, onQrClick }) {
 			return (
 				<div className="size-full flex flex-col">
 					<h3 className="text-secondary">Send me a message!</h3>
+
 					<ContactForm />
 				</div>
 			)

@@ -23,12 +23,14 @@ export default function Contact({ className = '' }) {
 
 			<div className="max-md:min-h-350 py-24 max-md:pb-45 flex flex-col justify-between items-center relative text-primary">
 				<h3>Noah Bachmann</h3>
+
 				<Image
 					src="/contact/noah.webp"
 					alt="me"
 					width={180}
 					height={180}
 					className="rounded-full"/>
+
 				<div className="flex gap-15 *:w-40 z-20">
 					<SocialLink
 						url="https://github.com/noahbachmann"
@@ -47,6 +49,7 @@ export default function Contact({ className = '' }) {
 						social="instagram"/>
 
 				</div>
+
 				<div className="w-full md:h-full max-md:mr-20 flex md:flex-col gap-10 justify-end items-end absolute max-md:bottom-0 md:right-0 md:top-0 text-secondary">
 					<button
 						className={`button-side ${info === 0 ? 'shadow-none! text-white!': ''}`}
@@ -63,6 +66,7 @@ export default function Contact({ className = '' }) {
 					</button>
 				</div>
 			</div>
+
 			<div className="min-h-400 md:min-h-460 p-24 bg-primary md:rounded-lg rounded-bl-none! z-10">
 				<ContactInfo tabNum={ info } onQrClick={ () => toggleModalMenu(false) } />
 			</div>
