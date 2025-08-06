@@ -20,7 +20,7 @@ export default function SocialLink({ social, url }){
 			target="_blank"
 			rel="noopener">
 
-			<div className="size-40 flex text-primary hover:text-accent active:text-white hover:scale-110 active:scale-96 duration-250 ease-in">
+			<div className="size-full flex text-primary hover:text-accent active:text-white hover:scale-110 active:scale-96 duration-250 ease-in">
 				<Icon />
 			</div>
 		</Link>

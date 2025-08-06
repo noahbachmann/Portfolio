@@ -3,7 +3,7 @@ import { useState } from 'react'
 import Image from 'next/image'
 
 import ContactInfo from '@components/contact-info'
-import SocialLink from '@components/social-link'
+import Socials from '@components/socials'
 import QrCode from '@components/qrcode'
 import Modal from '@components/modal'
 import { Mail, User } from '@svg'
@@ -32,24 +32,7 @@ export default function Contact({ className = '' }) {
 					height={180}
 					className="rounded-full"/>
 
-				<div className="flex gap-15 *:w-40 z-20">
-					<SocialLink
-						url="https://github.com/noahbachmann"
-						social="github"/>
-
-					<SocialLink
-						url="https://www.linkedin.com/in/noah-bachmann-27tp/"
-						social="linkedin"/>
-
-					<SocialLink
-						url="https://x.com/trainpaths"
-						social="twitter"/>
-
-					<SocialLink
-						url="https://instagram.com/"
-						social="instagram"/>
-
-				</div>
+				<Socials className="*:size-40 gap-15"/>
 
 				<div className="w-full md:h-full max-md:mr-20 flex md:flex-col gap-10 justify-end items-end absolute max-md:bottom-0 md:right-0 md:top-0 text-secondary">
 					<button
