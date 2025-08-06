@@ -4,7 +4,8 @@ import Image from 'next/image'
 
 import ContactInfo from '@components/contact-info'
 import SocialLink from '@components/social-link'
-import ModalQrCode from '@components/modal-qrcode'
+import QrCode from '@components/qrcode'
+import Modal from '@components/modal'
 import { Mail, User } from '@svg'
 
 export default function Contact({ className = '' }) {
@@ -19,7 +20,7 @@ export default function Contact({ className = '' }) {
 	return(
 		<div id="contact" className={ `container container-sm size-full max-md:px-0! md:p-20 md:mb-36 grid grid-cols-1 md:grid-cols-2 bg-secondary md:rounded-lg shadow ${className}` }>
 
-			{ showModal && <ModalQrCode onClose={ () => toggleModalMenu() }/> }
+			{ showModal && <Modal content={ <QrCode/> } onClose={ () => toggleModalMenu() }/> }
 
 			<div className="max-md:min-h-350 py-24 max-md:pb-45 flex flex-col justify-between items-center relative text-primary">
 				<h3>Noah Bachmann</h3>
