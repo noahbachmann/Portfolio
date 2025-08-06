@@ -4,7 +4,7 @@ export default function QrCode(){
 	return(
 		<div className="max-size-200 p-20 flex flex-col items-center justify-around gap-15 bg-primary text-secondary rounded-lg">
 
-			<h3 className="font-bold">Scan to get my contact!</h3>
+			<h3>Scan to get my contact!</h3>
 
 			<Image
 				src="/contact/contact-qrcode.webp"

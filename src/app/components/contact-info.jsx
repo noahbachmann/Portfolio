@@ -7,7 +7,7 @@ export default function ContactInfo({ tabNum, onQrClick }) {
 		case 0:
 			return(
 				<div className="h-full relative">
-					<h3 className="text-secondary">Contact</h3>
+					<h2 className="text-secondary">Contact</h2>
 
 					<div>
 						<span className="h6">Name</span>
@@ -42,7 +42,7 @@ export default function ContactInfo({ tabNum, onQrClick }) {
 		case 1:
 			return (
 				<div className="size-full flex flex-col">
-					<h3 className="text-secondary">Send me a message!</h3>
+					<h2 className="text-secondary">Send me a message!</h2>
 
 					<ContactForm />
 				</div>

@@ -38,6 +38,10 @@ h3 {
 	@apply text-[1.6rem];
 }
 
+h3 {
+	@apply font-semibold;
+}
+
 h4 {
 	@apply text-[1.4rem];
 }
@@ -48,8 +52,7 @@ button {
 	@apply text-[1.25rem];
 }
 
-h1,
-h2 {
+h1 {
 	@apply font-semibold uppercase;
 }
 

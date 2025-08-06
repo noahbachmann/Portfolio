@@ -4,7 +4,7 @@ export default function About() {
 	return (
 		<div id="about" className="container container-sm py-48">
 			<div className="flex flex-col justify-center gap-16">
-				<h2>Noah Bachmann - Software Developer</h2>
+				<h2 className="font-semibold uppercase">Who even is this guy ??</h2>
 
 				<p>
 					I'm Noah Bachmann, a Software Developer in training. Computer science is my passion and i'm determined to improve my skills every day.
