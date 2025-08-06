@@ -5,19 +5,23 @@ export default function Socials({ className= '' }){
 		<div className={ `flex z-20 ${ className }` }>
 			<SocialLink
 				url="https://github.com/noahbachmann"
-				social="github"/>
+				social="github"
+				aria="GitHub"/>
 
 			<SocialLink
 				url="https://www.linkedin.com/in/noah-bachmann-27tp/"
-				social="linkedin"/>
+				social="linkedin"
+				aria="LinkedIn"/>
 
 			<SocialLink
 				url="https://x.com/trainpaths"
-				social="twitter"/>
+				social="twitter"
+				aria="Twitter"/>
 
 			<SocialLink
 				url="https://instagram.com/"
-				social="instagram"/>
+				social="instagram"
+				aria="Instagram"/>
 
 		</div>
 	)
