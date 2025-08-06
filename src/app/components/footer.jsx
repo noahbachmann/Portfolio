@@ -20,7 +20,7 @@ export default function Footer({ className = '' }) {
 					<hr className="w-55 h-2 mb-10 rounded-[1px] bg-primary!"/>
 
 					<p className="max-lg:max-w-[90%] mb-12 lg:mb-28">Passionate developer with a lot of energy and love for the job.</p>
-					<Socials className="*:size-30 gap-10"/>
+					<Socials className="*:size-32 gap-10"/>
 				</div>
 				<div className="flex flex-col lg:col-start-3">
 					<h3>Navigate</h3>
