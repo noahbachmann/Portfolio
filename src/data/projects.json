@@ -46,7 +46,21 @@
 			"Fullstack Development"
 		],
 		"links": {
-			"Google Play Store": "https://play.google.com/store/apps/details?id=com.trainpaths.astronautical"
+			"Chrummbaum": "https://chrummbaum.ch"
+		}
+	},
+	{
+		"title": "Laravel",
+		"description": "At work, i had to create a Web-Application for clients to interact with our CRM. We used Laravel with Filament v4 to implement the interface between API and clients.",
+		"images": [
+			"/projects/laravel.webp"
+		],
+		"topics": [
+			"PHP",
+			"Web Development"
+		],
+		"links": {
+			"Website Kauz AG": "https://kauz.ch/"
 		}
 	},
 	{
@@ -62,21 +76,6 @@
 		],
 		"links": {
 			"My GitHub": "https://github.com/noahbachmann"
-		}
-	},
-	{
-		"title": "More Projects",
-		"description": "Over the course of my education, I have worked on many more projects. Some of them are not listed here, but you can find more on my GitHub profile.",
-		"images": [
-			"/projects/astronautical.webp"
-		],
-		"topics": [
-			"GitHub",
-			"Open Source",
-			"Web Development"
-		],
-		"links": {
-			"Google Play Store": "https://play.google.com/store/apps/details?id=com.trainpaths.astronautical"
 		}
 	}
 ]
