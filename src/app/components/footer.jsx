@@ -2,8 +2,8 @@
 import { useState } from 'react'
 import Link from 'next/link'
 
-import Modal from '@components/modal'
-import PrivacyPolicy from '@components/privacypolicy'
+import Modal from '@components/modal/modal'
+import PrivacyPolicy from '@components/modal/privacypolicy'
 import Socials from '@components/socials'
 
 export default function Footer({ className = '' }) {

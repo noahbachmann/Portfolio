@@ -4,8 +4,8 @@ import Image from 'next/image'
 
 import ContactInfo from '@components/contact-info'
 import Socials from '@components/socials'
-import QrCode from '@components/qrcode'
-import Modal from '@components/modal'
+import QrCode from '@components/modal/qrcode'
+import Modal from '@components/modal/modal'
 import { Mail, User } from '@svg'
 
 export default function Contact({ className = '' }) {
