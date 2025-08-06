@@ -52,6 +52,7 @@ export default function CustomLink({ url, name, index = 1, download = false }) {
 						initial="rest"
 						animate="rest"
 						whileHover="hover"
+						whileTap="active"
 						transition={{ ease: 'easeIn', duration: 0.2 }}
 						className="flex font-semibold">
 
