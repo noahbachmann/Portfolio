@@ -2,58 +2,10 @@
 import { useState } from 'react'
 import Image from 'next/image'
 
-import ContactForm from '@components/contact-form'
-import Link from '@components/link'
+import ContactInfo from '@components/contact-info'
 import SocialLink from '@components/social-link'
 import ModalQrCode from '@components/modal-qrcode'
-import { Mail, User, QR } from '@svg'
-
-function renderContent(tabNum, onQrClick) {
-	switch (tabNum) {
-		case 0:
-			return(
-				<div className="h-full relative">
-					<h3 className="text-secondary">Contact</h3>
-					<div>
-						<span className="h6">Name</span>
-						<p>Noah Bachmann</p>
-
-						<span className="h6">From</span>
-						<p>Switzerland</p>
-
-						<span className="h6">Company</span>
-						<p>Kauz Informatik Medien AG</p>
-
-						<span className="h6">E-Mail</span>
-						<Link
-							url="mailto:noah.bachmann@kauz.ch"
-							name="noah.bachmann@kauz.ch"/>
-
-
-						<span className="h6">Download Contact</span>
-						<Link
-							url="/contact/contact-card.vcf"
-							name="Download"
-							download/>
-					</div>
-					<div
-						onClick={ onQrClick }
-						className="size-36 absolute right-4 bottom-4 border-2 border-secondary text-secondary rounded hover:scale-108 hover:border-accent hover:text-accent active:scale-100 active:border-white active:text-white duration-150 ease-in">
-						<QR />
-					</div>
-				</div>
-			)
-		case 1:
-			return (
-				<div className="size-full flex flex-col">
-					<h3 className="text-secondary">Send me a message!</h3>
-					<ContactForm />
-				</div>
-			)
-		default:
-			return null
-	}
-}
+import { Mail, User } from '@svg'
 
 export default function Contact({ className = '' }) {
 
@@ -112,7 +64,7 @@ export default function Contact({ className = '' }) {
 				</div>
 			</div>
 			<div className="min-h-400 md:min-h-460 p-24 bg-primary md:rounded-lg rounded-bl-none! z-10">
-				{ renderContent(info, () => toggleModalMenu()) }
+				<ContactInfo tabNum={ info } onQrClick={ () => toggleModalMenu(false) } />
 			</div>
 		</div>
 	)
