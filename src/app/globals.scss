@@ -98,6 +98,10 @@ hr {
 	@apply px-9 md:px-12 py-6 md:py-8 -mr-1 cursor-pointer bg-primary max-md:rounded-t-l md:rounded-l-l max-md:shadow-inset-bottom md:shadow-inset-right md:hover:-translate-y-1 hover:scale-105 hover:shadow-none hover:text-accent active:text-white max-md:active:shadow-inset-bottom md:active:shadow-inset-right md:active:translate-y-0 active:scale-100 duration-200;
 }
 
+.link-footer {
+	@apply hover:text-white active:border-white active:scale-98 cursor-pointer mb-4;
+}
+
 input,
 textarea {
 	@apply font-[inherit] p-8 bg-white rounded outline-accent border-accent;
