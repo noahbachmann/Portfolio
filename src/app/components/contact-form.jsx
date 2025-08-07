@@ -32,7 +32,7 @@ export default function ContactForm(){
 				placeholder="Your message..."
 				{ ...register('message', { required: true, maxLength:200 })}/>
 
-			<button className="button text-primary bg-secondary border-2 hover:border-accent active:border-white hover:text-white">Send</button>
+			<button className="button text-primary bg-secondary border-2 hover:border-accent hover:text-accent active:border-white active:text-white">Send</button>
 		</form>
 	)
 }
