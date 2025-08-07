@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 
-import Icon from '@/app/components/buttons/icon'
+import Icon from '@components/buttons/logo'
 import Modal from '@components/modal/modal'
 import PrivacyPolicy from '@components/modal/privacypolicy'
 import Socials from '@components/socials'
