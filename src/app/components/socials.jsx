@@ -19,7 +19,7 @@ export default function Socials({ className= '' }){
 				aria="Twitter"/>
 
 			<SocialLink
-				url="https://instagram.com/"
+				url="https://instagram.com/n_oa_h_27"
 				social="instagram"
 				aria="Instagram"/>
 
