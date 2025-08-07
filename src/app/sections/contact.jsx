@@ -51,7 +51,7 @@ export default function Contact({ className = '' }) {
 				</div>
 			</div>
 
-			<div className="min-h-400 md:min-h-460 p-24 bg-primary md:rounded-lg rounded-bl-none! z-10">
+			<div className="min-h-400 md:min-h-460 p-24 bg-primary md:rounded-md rounded-bl-none! z-10">
 				<ContactInfo tabNum={ info } onQrClick={ () => toggleModalMenu(false) } />
 			</div>
 		</div>
