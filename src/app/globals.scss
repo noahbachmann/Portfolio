@@ -19,6 +19,7 @@
 	--shadow-inset-bottom: inset 0 -5px 4px rgba(0, 0, 0, 0.1);
 	--shadow-top: 0 -2px 2px hsl(0deg 0% 0% / 0.3);
 	--shadow-bottom: 0 2px 2px hsl(0deg 0% 0% / 0.3);
+	--shadow-input: 0 0 0 2px rgb(118, 16, 79);
 
 	--color-primary: #8DC294;
 	--color-secondary: #254d32;
@@ -109,5 +110,9 @@ hr {
 
 input,
 textarea {
-	@apply font-[inherit] p-8 bg-white rounded outline-accent border-accent;
+	@apply font-[inherit] p-8 bg-white rounded focus:shadow-input focus:outline-none;
+}
+
+.error {
+	@apply border-red-600 border-1 border-l-6;
 }
