@@ -55,14 +55,14 @@ export default function Navigation({ className='' }) {
 					<Burger isOpen={ isVisible }/>
 				</button>
 
-				<div className={ `container container-lg h-52 px-20 flex max-md:flex-col md:items-center md:justify-between
-					max-md:justify-center max-md:size-full max-md:fixed max-md:inset-y-0 transition-transform ease-out duration-300 ${isVisible ? 'max-md:translate-x-0' : 'max-md:translate-x-full'} max-md:bg-secondary/85 max-md:backdrop-blur` }>
+				<div className={ `container container-lg h-40 my-5 flex max-md:flex-col md:items-center md:justify-between
+					max-md:justify-center max-md:size-full max-md:fixed max-md:inset-y-0 transition-transform ease-out duration-300 ${ isVisible ? 'max-md:translate-x-0' : 'max-md:translate-x-full' } max-md:bg-secondary/85 max-md:backdrop-blur` }>
 					<Image
-						src="/controller.webp"
+						src="/icon.webp"
 						alt="logo"
 						className="max-md:hidden h-full w-auto"
-						width={100}
-						height={100}
+						width={72}
+						height={72}
 						blurDataURL="data:..."
 						placeholder="blur" />
 
