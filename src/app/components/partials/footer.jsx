@@ -19,7 +19,7 @@ export default function Footer({ className = '' }) {
 				<div className="flex flex-col">
 					<div className="flex gap-12">
 						<h3>Noah Bachmann</h3>
-						<Icon className="max-md:max-h-32 max-h-36"/>
+						<Icon className="max-md:max-h-32 max-h-36 hover:scale-110 active:scale-98 ease-in duration-200"/>
 					</div>
 					<hr className="w-55 h-2 mb-10 rounded-[1px] bg-primary!"/>
 
