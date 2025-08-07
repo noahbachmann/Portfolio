@@ -4,9 +4,9 @@ import { useState } from 'react'
 import { useWindowWidth } from '@react-hook/window-size'
 
 import Link from 'next/link'
-import Image from 'next/image'
 
 import { Burger } from '@svg'
+import Icon from '@components/icon'
 
 export default function Navigation({ className='' }) {
 
@@ -55,16 +55,10 @@ export default function Navigation({ className='' }) {
 					<Burger isOpen={ isVisible }/>
 				</button>
 
-				<div className={ `container container-lg h-40 my-5 flex max-md:flex-col md:items-center md:justify-between
+				<div className={ `container container-lg h-40 md:my-5 flex max-md:flex-col md:items-center md:justify-between
 					max-md:justify-center max-md:size-full max-md:fixed max-md:inset-y-0 transition-transform ease-out duration-300 ${ isVisible ? 'max-md:translate-x-0' : 'max-md:translate-x-full' } max-md:bg-secondary/85 max-md:backdrop-blur` }>
-					<Image
-						src="/icon.webp"
-						alt="logo"
-						className="max-md:hidden h-full w-auto"
-						width={72}
-						height={72}
-						blurDataURL="data:..."
-						placeholder="blur" />
+
+					<Icon className="max-md:hidden h-full w-auto" />
 
 					<nav
 						id="navlist"
