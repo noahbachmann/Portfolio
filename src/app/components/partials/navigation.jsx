@@ -39,7 +39,7 @@ export default function Navigation({ className='' }) {
 	return(
 		<>
 			<motion.div
-				className={ `w-full md:py-6 sticky top-0 z-50 bg-secondary text-primary shadow-bottom ${ className }` }
+				className={ `w-full md:py-6 sticky top-0 z-40 bg-secondary text-primary shadow-bottom ${ className }` }
 				variants={ VARIANTS }
 				animate={ WINDOW_WIDTH < 768 ? '' : barState }
 				transition={{ ease: 'easeIn', duration: 0.35 }}
@@ -47,7 +47,7 @@ export default function Navigation({ className='' }) {
 
 				<button
 					onClick={ toggleNavMenu }
-					className={ `w-32 hidden max-md:block absolute right-8 top-8 z-50 ${ isVisible ? '' : 'text-black' }` }
+					className={ `w-32 hidden max-md:block absolute right-8 top-8 z-40 ${ isVisible ? '' : 'text-black' }` }
 					aria-label="toggle nav-menu"
 					aria-controls="navlist"
 					aria-expanded={ isVisible }>
