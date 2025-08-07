@@ -1,4 +1,4 @@
-import SocialLink from '@components/social-link'
+import SocialLink from '@components/buttons/social-link'
 
 export default function Socials({ className= '' }){
 	return(

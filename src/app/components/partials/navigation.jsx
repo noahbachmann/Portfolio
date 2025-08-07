@@ -6,7 +6,7 @@ import { useWindowWidth } from '@react-hook/window-size'
 import Link from 'next/link'
 
 import { Burger } from '@svg'
-import Icon from '@components/icon'
+import Icon from '@/app/components/buttons/icon'
 
 export default function Navigation({ className='' }) {
 

@@ -1,5 +1,5 @@
 import ContactForm from '@components/contact-form'
-import Link from '@components/link'
+import Link from '@components/buttons/link'
 import { QR } from './svg'
 
 export default function ContactInfo({ tabNum, onQrClick }) {
