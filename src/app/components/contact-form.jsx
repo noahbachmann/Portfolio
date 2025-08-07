@@ -3,11 +3,11 @@ import { useForm } from 'react-hook-form'
 import { API_Post } from '@/app/api/apiRequest'
 
 export default function ContactForm(){
-	const { 
-		register, 
-		handleSubmit, 
-		reset, 
-		formState: { errors} } = useForm()
+	const {
+		register,
+		handleSubmit,
+		reset,
+		formState: { errors } } = useForm()
 
 	async function OnSubmit(data){
 		const CHECK = await API_Post(data, '/api/email')
@@ -19,7 +19,7 @@ export default function ContactForm(){
 			<input
 				className={ `h-[12%] ${ errors.name ? 'error' : '' }` }
 				type="text" placeholder="Your Name"
-				{ ...register('name', { required: true, maxLength:50 })} />	
+				{ ...register('name', { required: true, maxLength:50 }) } />	
 			<input
 				className="h-[12%]"
 				type="text"
