@@ -1,8 +1,21 @@
 'use client'
-import Chart from 'chart.js/auto'
 import min from 'lodash/min'
 import { useRef, useEffect } from 'react'
 import { useWindowWidth } from '@react-hook/window-size'
+import {
+  Chart,
+  DoughnutController,
+  ArcElement,
+  Tooltip,
+  Legend,
+} from 'chart.js'
+
+Chart.register(
+  DoughnutController,
+  ArcElement,
+  Tooltip,
+  Legend,
+)
 
 const COLORS = [
 	'rgba(167, 0, 222, 0.6)',
