@@ -1,4 +1,5 @@
 import { Inter } from 'next/font/google'
+import { Analytics } from "@vercel/analytics/next"
 
 import './globals.scss'
 
@@ -16,13 +17,14 @@ export default function RootLayout({ children }) {
 	return (
 		<html lang="en" className={ inter.className }>
 			<body className="min-h-screen flex flex-col bg-primary">
-				<Navigation />
+				<Navigation/>
 
 				<main className="flex-1">
 					{ children }
 				</main>
 
 				<Footer className="size-full bg-secondary text-primary"/>
+				<Analytics/>
 			</body>
 		</html>
 	)
