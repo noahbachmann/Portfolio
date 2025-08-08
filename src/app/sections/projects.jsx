@@ -1,5 +1,5 @@
 'use client'
-import { motion, useSpring, useTransform, useMotionValue } from 'motion/react'
+import { motion, useTransform, useMotionValue } from 'motion/react'
 import { useState, useRef, useEffect } from 'react'
 import { useWindowWidth } from '@react-hook/window-size'
 
