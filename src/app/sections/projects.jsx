@@ -15,12 +15,8 @@ export default function Projects({ className = '' }) {
 	const x = useMotionValue(0)
 
 	useEffect(() => {
-		setDragLimit(SCROLL_REF.current.offsetWidth - SCROLL_REF.current.scrollWidth - 24)
+		setDragLimit(SCROLL_REF.current.offsetWidth - SCROLL_REF.current.scrollWidth - 16)
 	}, [WINDOW_WIDTH])
-
-	function onDrag(){
-		console.log(x)
-	}
 
 	const BAR_SIZE = useTransform(x, [-50, dragLimit+50], [0.05, 1])
 
@@ -32,7 +28,6 @@ export default function Projects({ className = '' }) {
 
 				<motion.div
 					drag="x"
-					onDrag={ onDrag }
 					dragConstraints={ { top: 0, bottom: 0, left: dragLimit, right: 0 } }
 					dragElastic={ 0.1 }
 					dragTransition={ { bounceStiffness: 300, bounceDamping: 15 } }
