@@ -32,7 +32,7 @@ export default function Footer({ className = '' }) {
 
 					<Link href="#projects"><p className="link-footer">Projects</p></Link>
 					<Link href="#about"><p className="link-footer">About</p></Link>
-					<Link href="#contact"><p className="link-footer">Contact</p></Link>
+					<Link href="#contact"><p className="link-footer max-w-content">Contact</p></Link>
 				</div>
 				<div className="flex flex-col">
 					<h3>Legal</h3>
