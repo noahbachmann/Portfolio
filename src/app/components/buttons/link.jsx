@@ -6,15 +6,15 @@ import { Arrows, Download } from '@svg'
 
 export default function CustomLink({ url, name, index = 1, download = false }) {
 	const VARIANTS = {
-		rest: { scale: 1, color: '#254d32', x: -20 },
-		hover: { scale: 1, color: '#76104F', x: 0 },
-		active: { scale: 0.98, color: '#ddd8c4' },
+		rest: { scale: 1, x: -20 },
+		hover: { scale: 1, x: 0 },
+		active: { scale: 0.98 },
 	}
 
 	const ARROW_VARIANTS = {
-		rest: { scale: 1, color: '#76104F', opacity: 0 },
-		hover: { scale: 1, color: '#76104F', opacity: 1 },
-		active: { scale: 0.98, color: '#ddd8c4' }
+		rest: { scale: 1, opacity: 0 },
+		hover: { scale: 1, opacity: 1 },
+		active: { scale: 0.98 }
 	}
 
 	return(
@@ -34,7 +34,7 @@ export default function CustomLink({ url, name, index = 1, download = false }) {
 						whileHover="hover"
 						whileTap="active"
 						transition={{ ease: 'easeIn', duration: 0.2 }}
-						className="flex font-semibold">
+						className="flex font-semibold text-secondary hover:text-accent active:text-white">
 
 						<motion.div className="w-20 h-auto flex items-center" variants={ ARROW_VARIANTS }>
 								<Arrows />
@@ -54,7 +54,7 @@ export default function CustomLink({ url, name, index = 1, download = false }) {
 						whileHover="hover"
 						whileTap="active"
 						transition={{ ease: 'easeIn', duration: 0.2 }}
-						className="flex font-semibold">
+						className="flex font-semibold text-secondary hover:text-accent active:text-white">
 
 						<motion.div className="w-20 h-auto flex items-center" variants={ ARROW_VARIANTS }>
 								<Download />

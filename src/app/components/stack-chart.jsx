@@ -269,7 +269,7 @@ export default function StackChart(){
 	}, [])
 
 	return(
-		<div className="w-full min-h-[50vh] md:p-24 relative">
+		<div className="w-full min-h-[50vh] md:py-24 relative">
 			<canvas ref={ CANVAS_REF }/>
 		</div>
 	)

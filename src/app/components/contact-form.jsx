@@ -19,7 +19,7 @@ export default function ContactForm(){
 			<input
 				className={ `h-[12%] ${ errors.name ? 'error' : '' }` }
 				type="text" placeholder="Your Name"
-				{ ...register('name', { required: true, maxLength:50 }) } />	
+				{ ...register('name', { required: true, maxLength:50 }) } />
 			<input
 				className="h-[12%]"
 				type="text"
