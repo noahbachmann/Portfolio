@@ -12,6 +12,7 @@ const TRANSPORT = nodemailer.createTransport({
 		clientSecret: process.env.GOOGLE_CLIENT_SECRET,
 		refreshToken: process.env.GOOGLE_REFRESH_TOKEN,
 	},
+	secure: true,
 })
 
 const RATE = new RateLimiterMemory({
@@ -41,18 +42,29 @@ export async function POST(request){
 		text: message,
 	}
 
-	try {
-		await TRANSPORT.sendMail(MAIL_OPTIONS,
-			function (err) {
-				if (!err) {
-					resolve('Email sent')
+	await new Promise((resolve, reject) => {
+		TRANSPORT.verify((error, success) => {
+			if(error) {
+				console.log(error)
+				reject(error)
+			} else {
+				console.log('Server ready')
+				resolve(success)
+			}
+		})
+	})
+
+	await new Promise((resolve, reject) => {
+		TRANSPORT.sendMail(MAIL_OPTIONS,
+			(err, info) =>  {
+				if (err) {
+					console.log(err)
+					reject(err)
 				} else {
-					console.log(err.message)
+					console.log(info)
+					resolve(info)
 				}
 			})
-		return NextResponse.json({ message: 'Email sent' })
-	} catch (err) {
-		console.log(err)
-		return NextResponse.json({ error: err }, { status: 500 })
-	}
+	})
+	return NextResponse.json({ message: 'Email sent' })
 }
