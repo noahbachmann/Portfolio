@@ -43,28 +43,15 @@ export async function POST(request){
 	}
 
 	await new Promise((resolve, reject) => {
-		TRANSPORT.verify((error, success) => {
-			if(error) {
-				console.log(error)
-				reject(error)
-			} else {
-				console.log('Server ready')
-				resolve(success)
-			}
-		})
-	})
-
-	await new Promise((resolve, reject) => {
 		TRANSPORT.sendMail(MAIL_OPTIONS,
 			(err, info) =>  {
 				if (err) {
-					console.log(err)
 					reject(err)
 				} else {
-					console.log(info)
 					resolve(info)
 				}
 			})
 	})
+
 	return NextResponse.json({ message: 'Email sent' })
 }
