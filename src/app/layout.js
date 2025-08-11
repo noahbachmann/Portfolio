@@ -1,5 +1,6 @@
 import { Inter } from 'next/font/google'
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from '@vercel/analytics/next'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 import './globals.scss'
 
@@ -24,7 +25,9 @@ export default function RootLayout({ children }) {
 				</main>
 
 				<Footer className="size-full bg-secondary text-primary"/>
+
 				<Analytics/>
+				<SpeedInsights/>
 			</body>
 		</html>
 	)
