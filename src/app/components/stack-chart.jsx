@@ -20,6 +20,7 @@ Chart.register(
 const COLORS = [
 	'rgba(167, 0, 222, 0.6)',
 	'rgba(255, 214, 0, 0.6)',
+	'rgba(69, 255, 56, 0.6)',
 	'rgba(255, 101, 30, 0.6)',
 	'rgba(152, 204, 253, 0.6)',
 	'rgba(55, 114, 164, 0.6)',
@@ -27,6 +28,7 @@ const COLORS = [
 const HOVER_COLORS = [
 	'rgb(167, 0, 222)',
 	'rgb(255, 214, 0)',
+	'rgb(69, 255, 56)',
 	'rgb(255, 101, 30)',
 	'rgb(152, 204, 253)',
 	'rgb(55, 114, 164)',
@@ -64,10 +66,10 @@ export default function StackChart(){
 	const WINDOW_WIDTH = useWindowWidth()
 
 	const BASE_DATA = {
-		labels: ['C#', 'JavaScript', 'HTML/CSS', 'SQL', 'Python'],
+		labels: ['C#', 'JavaScript', 'PHP', 'HTML/CSS', 'SQL', 'Python'],
 		datasets: [{
 			label: 'Skillset',
-			data: [19, 24, 24, 25, 8],
+			data: [17, 20, 17, 20, 20, 6],
 			backgroundColor: COLORS,
 			hoverBackgroundColor: HOVER_COLORS,
 		}]
@@ -93,13 +95,23 @@ export default function StackChart(){
 		}]
 	}
 
+	const PHP_DATA = {
+		labels: ['Laravel', 'Filament'],
+		datasets: [{
+			label: 'PHP',
+			data: [40, 60],
+			backgroundColor: GenerateLighterShades(COLORS[2],2),
+			hoverBackgroundColor: HOVER_COLORS[2],
+		}]
+	}
+
 	const HTML_DATA = {
 		labels: ['Tailwind', 'Bootstrap'],
 		datasets: [{
 			label: 'HTML / CSS',
 			data: [70, 30],
-			backgroundColor: GenerateLighterShades(COLORS[2],2),
-			hoverBackgroundColor: HOVER_COLORS[2],
+			backgroundColor: GenerateLighterShades(COLORS[3],2),
+			hoverBackgroundColor: HOVER_COLORS[3],
 		}]
 	}
 
@@ -108,8 +120,8 @@ export default function StackChart(){
 		datasets: [{
 			label: 'SQL',
 			data: [80, 20],
-			backgroundColor: GenerateLighterShades(COLORS[3],2),
-			hoverBackgroundColor: HOVER_COLORS[3],
+			backgroundColor: GenerateLighterShades(COLORS[4],2),
+			hoverBackgroundColor: HOVER_COLORS[4],
 		}]
 	}
 
@@ -118,8 +130,8 @@ export default function StackChart(){
 		datasets: [{
 			label: 'Python',
 			data: [75, 25],
-			backgroundColor: GenerateLighterShades(COLORS[4],2),
-			hoverBackgroundColor: HOVER_COLORS[4],
+			backgroundColor: GenerateLighterShades(COLORS[5],2),
+			hoverBackgroundColor: HOVER_COLORS[5],
 		}]
 	}
 
@@ -185,7 +197,7 @@ export default function StackChart(){
 						if(legendItem.length != 0) {
 							HandleLabelHover(legend, legendItem.index, PREV_COLOR, CHART_REF)
 						}
-						if(legend.legendItems.length === 5){
+						if(legend.legendItems.length === 6){
 							switch(legendItem.index){
 								case 0:
 									CHART_REF.current.data = CS_DATA
@@ -194,12 +206,15 @@ export default function StackChart(){
 									CHART_REF.current.data = JS_DATA
 									break
 								case 2:
-									CHART_REF.current.data = HTML_DATA
+									CHART_REF.current.data = PHP_DATA
 									break
 								case 3:
-									CHART_REF.current.data = SQL_DATA
+									CHART_REF.current.data = HTML_DATA
 									break
 								case 4:
+									CHART_REF.current.data = SQL_DATA
+									break
+								case 5:
 									CHART_REF.current.data = PYTHON_DATA
 									break
 							}
@@ -237,7 +252,7 @@ export default function StackChart(){
 					CHART_REF.current.update()
 					return
 				}
-				if(legend.boxes[0].legendItems.length === 5){
+				if(legend.boxes[0].legendItems.length === 6){
 					switch(legendItem[0].index){
 						case 0:
 							CHART_REF.current.data = CS_DATA
@@ -246,12 +261,15 @@ export default function StackChart(){
 							CHART_REF.current.data = JS_DATA
 							break
 						case 2:
-							CHART_REF.current.data = HTML_DATA
+							CHART_REF.current.data = PHP_DATA
 							break
 						case 3:
-							CHART_REF.current.data = SQL_DATA
+							CHART_REF.current.data = HTML_DATA
 							break
 						case 4:
+							CHART_REF.current.data = SQL_DATA
+							break
+						case 5:
 							CHART_REF.current.data = PYTHON_DATA
 							break
 					}
