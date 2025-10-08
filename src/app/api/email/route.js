@@ -16,7 +16,7 @@ const TRANSPORT = nodemailer.createTransport({
 	secure: true,
 })
 
-const { limit: ratelimit } = new Ratelimit({
+const { ratelimit } = new Ratelimit({
 	redis: Redis.fromEnv(),
 	limiter: Ratelimit.slidingWindow(2, '60s'),
 })
