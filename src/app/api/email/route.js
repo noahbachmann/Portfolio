@@ -21,7 +21,7 @@ const redis = new Redis({
 	token: process.env.UPSTASH_REDIS_REST_TOKEN,
 })
 
-const { ratelimit } = new Ratelimit({
+const ratelimit = new Ratelimit({
 	redis: redis,
 	limiter: Ratelimit.slidingWindow(2, '60s'),
 })
@@ -29,7 +29,7 @@ const { ratelimit } = new Ratelimit({
 export async function POST(request) {
 	const USER_IP = await GetUserIP()
 
-	const { success } = await ratelimit.limit(USER_IP);
+	const { success } = await ratelimit.limit(USER_IP)
 
 	if (!success) {
 		return NextResponse.json({ message: 'Too many requests' }, { status: 429 })
