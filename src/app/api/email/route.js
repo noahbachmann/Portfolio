@@ -1,7 +1,8 @@
 import nodemailer from 'nodemailer'
-import { RateLimiterMemory } from 'rate-limiter-flexible'
 import { NextResponse } from 'next/server'
 import { GetUserIP } from '../getIp'
+import { Ratelimit } from "@upstash/ratelimit"
+import { Redis } from "@upstash/redis";
 
 const TRANSPORT = nodemailer.createTransport({
 	service: 'gmail',
@@ -15,17 +16,17 @@ const TRANSPORT = nodemailer.createTransport({
 	secure: true,
 })
 
-const RATE = new RateLimiterMemory({
-	points:2,
-	duration: 60
+const { limit: ratelimit } = new Ratelimit({
+	redis: Redis.fromEnv(),
+	limiter: Ratelimit.slidingWindow(2, '60s'),
 })
 
 export async function POST(request){
 	const USER_IP = await GetUserIP()
 
-	try {
-		await RATE.consume(USER_IP, 1)
-	} catch {
+	const { success } = await ratelimit.limit(USER_IP);
+
+	if (!success) {
 		return NextResponse.json({ message: 'Too many requests' }, { status: 429 })
 	}
 
