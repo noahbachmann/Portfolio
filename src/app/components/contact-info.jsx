@@ -25,18 +25,18 @@ export default function ContactInfo({ tabNum, onQrClick }) {
 							name="noah.bachmann@kauz.ch"/>
 
 
-						<span className="h6">Download Contact</span>
+						{/* <span className="h6">Download Contact</span>
 						<Link
 							url="/contact/contact-card.vcf"
 							name="Download"
-							download/>
+							download/> */}
 					</div>
 
-					<div
+					{/* <div
 						onClick={ onQrClick }
 						className="size-36 absolute right-4 bottom-4 border-2 border-secondary text-secondary rounded hover:scale-108 hover:border-accent hover:text-accent cursor-pointer active:scale-100 active:border-white active:text-white duration-150 ease-in">
 						<QR />
-					</div>
+					</div> */}
 				</div>
 			)
 		case 1:
