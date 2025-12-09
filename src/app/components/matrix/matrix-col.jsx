@@ -7,8 +7,9 @@ import MatrixLine from './matrix-line'
 
 export default function MatrixCol({ xPos = 0, size = 1 }) {
 	const COL_REF = useRef(null)
-	const [lines, setLines] = useState([])
+	const LINES_REF = useRef([])
 
+	const [, forceUpdate] = useState(0)
 	const ID_COUNTER = useRef(0)
 	const FIRST_RUN = useRef(false)
 	const TIMER = useRef(0)
@@ -19,19 +20,18 @@ export default function MatrixCol({ xPos = 0, size = 1 }) {
 		for (let i = 0; i < amount; i++) {
 			numText += random()
 		}
-		setLines((prev) => {
-			const NOW = performance.now()
-			const FILTERED = prev.filter((prev) => NOW - prev.spawnTime < 55000)
-			return [
-				...FILTERED,
-				{
-					id: ID_COUNTER.current++,
-					text: numText,
-					spawnTime: NOW,
-					yPos: yPos
-				}
-			]
+		const NOW = performance.now()
+
+		LINES_REF.current = [
+			...LINES_REF.current.filter(line => NOW - line.spawnTime < 55000)
+		]
+		LINES_REF.current.push({
+			id: ID_COUNTER.current++,
+			text: numText,
+			spawnTime: NOW,
+			yPos
 		})
+		forceUpdate(n => n + 1)
 	}
 
 	function TimerLoop(delta, yPos = 25){
@@ -59,7 +59,7 @@ export default function MatrixCol({ xPos = 0, size = 1 }) {
 
 	return (
 		<group ref={COL_REF}>
-			{lines.map(({ id, text, yPos }) => (
+			{LINES_REF.current.map(({ id, text, yPos }) => (
 				<MatrixLine key={ id } xPos={ xPos } yPos={ yPos } size={ size } text={ text } />
 			))}
 		</group>
