@@ -1,6 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react'
-import { set, useForm } from 'react-hook-form'
+import { useForm } from 'react-hook-form'
 import { API_Post } from '@/app/api/apiRequest'
 import SubmitButton from './buttons/submit'
 
@@ -10,9 +10,9 @@ export default function ContactForm(){
 	const [isSent, setIsSent] = useState(false)
 
 	useEffect(() => {
-		const firstLoad = setTimeout(() => setIsDisabled(false), 5000);
-		return () => clearTimeout(firstLoad);
-	}, []);
+		const firstLoad = setTimeout(() => setIsDisabled(false), 5000)
+		return () => clearTimeout(firstLoad)
+	}, [])
 
 	const {
 		register,
@@ -28,7 +28,7 @@ export default function ContactForm(){
 		setIsSent(true)
 		const CHECK = await API_Post(data, '/api/email')
 		if(CHECK) reset()
-		
+
 		setIsLoading(false)
 		setTimeout(() => {
 			setIsDisabled(false)
