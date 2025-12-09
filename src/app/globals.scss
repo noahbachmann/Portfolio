@@ -1,0 +1,123 @@
+@use "tailwindcss";
+
+@theme {
+	--breakpoint-sm: 540px;
+	--breakpoint-md: 768px;
+	--breakpoint-lg: 1020px;
+	--breakpoint-xl: 1440px;
+
+	--spacing: 1px;
+
+	--radius-lg: 1rem;
+	--radius-l: 0.8rem;
+	--radius-md: 0.8rem;
+	--radius-sm: 0.25rem;
+
+	--shadow: 1.5px 3px 3px hsl(0deg 0% 0% / 0.35);
+
+	--shadow-inset-right: inset -5px 0 4px rgba(0, 0, 0, 0.1);
+	--shadow-inset-bottom: inset 0 -5px 4px rgba(0, 0, 0, 0.1);
+	--shadow-top: 0 -2px 2px hsl(0deg 0% 0% / 0.3);
+	--shadow-bottom: 0 2px 2px hsl(0deg 0% 0% / 0.3);
+	--shadow-input: 0 0 0 2px rgb(118, 16, 79);
+
+	--color-primary: #8DC294;
+	--color-secondary: #254d32;
+	--color-accent: #76104F;
+	--color-white: #ddd8c4;
+}
+
+html {
+	@apply scroll-pt-64;
+}
+
+h1 {
+	@apply text-[2.75rem];
+}
+
+h1 {
+	@apply font-semibold uppercase;
+}
+
+
+h2,
+h3 {
+	@apply text-[1.6rem];
+}
+
+h3 {
+	@apply font-semibold;
+}
+
+h4 {
+	@apply text-[1.4rem];
+}
+
+h5,
+a,
+button {
+	@apply text-[1.25rem];
+}
+
+h6,
+.h6 {
+	@apply text-[0.85rem] text-secondary block mt-12;
+}
+
+p {
+	@apply text-[1.125rem] leading-22;
+}
+
+hr {
+	@apply border-none bg-black;
+}
+
+.container {
+	@apply mx-auto px-16;
+}
+
+.container-sm {
+	@apply max-w-[818px];
+}
+
+.container-md {
+	@apply max-w-[1020px];
+}
+
+.container-lg {
+	@apply max-w-[1224px];
+}
+
+.hover-up {
+	@apply duration-250 ease-out hover:-translate-y-4 hover:text-white;
+}
+
+@utility no-scrollbar {
+	@apply [scrollbar-width:none] [&::-webkit-scrollbar]:hidden;
+}
+
+.button {
+	@apply cursor-pointer px-12 py-8 rounded duration-250 ease-out hover:scale-102 active:scale-98;
+}
+
+.button-side {
+	@apply px-9 md:px-12 py-6 md:py-8 -mr-1 cursor-pointer bg-primary max-md:rounded-t-l md:rounded-l-l max-md:shadow-inset-bottom md:shadow-inset-right md:hover:-translate-y-1 hover:scale-105 hover:shadow-none hover:text-accent active:text-white max-md:active:shadow-inset-bottom md:active:shadow-inset-right md:active:translate-y-0 active:scale-100 duration-200;
+}
+
+.link-footer {
+	@apply w-fit mb-4 hover:text-white active:border-white hover:scale-104 active:scale-96 cursor-pointer;
+}
+
+input,
+textarea {
+	@apply font-[inherit] p-8 bg-white rounded focus:shadow-input focus:outline-none;
+}
+
+img,
+a {
+	-webkit-user-drag: none;
+}
+
+.error {
+	@apply border-red-600 border-1 border-l-6;
+}

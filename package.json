@@ -1,0 +1,38 @@
+{
+	"name": "portfolio",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev --turbopack",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint"
+	},
+	"dependencies": {
+		"@react-hook/window-size": "^3.1.1",
+		"@react-three/drei": "^10.3.0",
+		"@react-three/fiber": "^9.1.4",
+		"@upstash/ratelimit": "^2.0.6",
+		"@vercel/analytics": "^1.5.0",
+		"@vercel/speed-insights": "^1.2.0",
+		"chart.js": "^4.5.0",
+		"lodash": "^4.17.21",
+		"motion": "^12.19.1",
+		"next": "15.3.6",
+		"nodemailer": "^7.0.5",
+		"react": "19.0.1",
+		"react-dom": "19.0.1",
+		"react-hook-form": "^7.60.0",
+		"react-icons": "^5.5.0",
+		"three": "^0.177.0"
+	},
+	"devDependencies": {
+		"@eslint/eslintrc": "^3",
+		"@stylistic/eslint-plugin": "^5.0.0",
+		"@tailwindcss/postcss": "^4",
+		"eslint": "^9",
+		"eslint-config-next": "15.3.4",
+		"sass": "^1.89.2",
+		"tailwindcss": "^4"
+	}
+}

@@ -1,0 +1,92 @@
+[
+	{
+		"title": "Astronautical",
+		"description": "I created this game using Unity, C# and Photoshop. It is a 2D Pixel-Art-Game comparable to titles like 'Jetpack Joyride'. You can download it for free on the Google Play Store.",
+		"images": [
+			"/projects/astro_1.webp"
+		],
+		"topics": [
+			"Unity",
+			"C#",
+			"Photoshop",
+			"Game Development"
+		],
+		"links": {
+			"Google Play Store": "https://play.google.com/store/apps/details?id=com.trainpaths.astronautical"
+		}
+	},
+	{
+		"title": "Claimspartner CH",
+		"description": "Early on in my career, I got the chance to create a website for Claimspartner CH, a swiss insurance company. It was very interesting to lead this project and I gained a lot of experience.",
+		"images": [
+			"/projects/claimspartner.webp"
+		],
+		"topics": [
+			"HTML",
+			"TailwindCSS",
+			"JavaScript",
+			"Frontend Development"
+		],
+		"links": {
+			"Claimspartner.ch": "https://www.claimspartner.ch"
+		}
+	},
+	{
+		"title": "WordPress",
+		"description": "As an apprentice, I worked on a lot of WordPress projects. I learned how to utilize and create custom themes, plugins and Gutenberg blocks.",
+		"images": [
+			"/projects/wordpress.webp"
+		],
+		"topics": [
+			"WordPress",
+			"PHP",
+			"HTML",
+			"TailwindCSS",
+			"JavaScript",
+			"CMS"
+		],
+		"links": {
+			"Chrummbaum": "https://chrummbaum.ch"
+		}
+	},
+	{
+		"title": "Laravel",
+		"description": "At my work, i had to help create a Web-Application for clients to interact with our CRM. We used Laravel with Filament v4 to implement the interface between API and clients.",
+		"images": [
+			"/projects/laravel.webp"
+		],
+		"topics": [
+			"PHP",
+			"Web Development"
+		],
+		"links": {}
+	},
+	{
+		"title": "PayloadCMS",
+		"description": "Finding out about HeadlessCMS was interesting. I am still developing my personal Payload-project, hoping i can use it to create websites for future clients.",
+		"images": [
+			"/projects/payload.webp"
+		],
+		"topics": [
+			"React",
+			"CMS",
+			"Web Development"
+		],
+		"links": {}
+	},
+	{
+		"title": "More Projects",
+		"description": "Over the course of my education, I have worked on many projects. Some of them are not listed here, but you may find them on my GitHub profile.",
+		"images": [
+			"/projects/github.webp"
+		],
+		"topics": [
+			"GitHub",
+			"Open Source",
+			"Web Development"
+		],
+		"links": {
+			"My GitHub": "https://github.com/noahbachmann"
+		}
+	}
+]
