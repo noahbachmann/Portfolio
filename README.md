@@ -5,13 +5,13 @@ This is a fast, responsive one-page portfolio website built with [Next.js](https
 
 ## ✨ Features
 
-- ⚡️ Built with Next.js & React
-- 💅 Tailwind CSS for styling
-- 🎭 Framer Motion for smooth animations
-- 📱 Fully responsive design
-- 🔗 External social/profile links
-- 🖼️ Project gallery
-- 📧 Contact form and mailto link
+⚡️ Built with Next.js & React
+💅 Tailwind CSS for styling
+🎭 Framer Motion for smooth animations
+📱 Fully responsive design
+🔗 External social/profile links
+🖼️ Project gallery
+📧 Contact form and mailto link
 
 ## 🔧 Tech Stack
 
