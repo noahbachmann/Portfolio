@@ -15,12 +15,12 @@ export default function About() {
 				</p>
 				<p>
 					The <strong>most fun</strong> i've had in Computer Science must've been when i created 'Astronautical', the mobile game. It was one of my earliest projects and being able to combine
-					my own imagination and creativity with a designing aspect (which is definitely my weakpoint) and a logical thinking aspect is just addictingly fun.
+					my own imagination and creativity in designing the game with the logical thinking aspect of programming the game was just addictingly fun.
 				</p>
 
 				<p>
 					My current <strong>capabilites</strong> mostly lie in website development, both in the frontend and the backend. I can also work well with databases, creating them and modifying them. Combining those skills,
-					i am very capable of using those different skillsets to create user interfaces for people to interact with databases.
+					i am very capable of creating user interfaces for people to interact with databases and auth-systems.
 				</p>
 
 				<StackChart />
