@@ -22,7 +22,6 @@ export default function ContactForm(){
 
 	async function OnSubmit(data){
 		if(isDisabled) return
-
 		setIsLoading(true)
 		setIsDisabled(true)
 		setIsSent(true)

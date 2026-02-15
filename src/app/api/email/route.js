@@ -1,19 +1,22 @@
 import nodemailer from 'nodemailer'
 import { NextResponse } from 'next/server'
 
+
 const TRANSPORT = nodemailer.createTransport({
-	service: 'gmail',
+	host: process.env.MAIL_HOST,
+	port: process.env.MAIL_PORT,
 	auth: {
-		type: 'OAuth2',
-		user: process.env.SENDER,
-		clientId: process.env.GOOGLE_CLIENT_ID,
-		clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-		refreshToken: process.env.GOOGLE_REFRESH_TOKEN,
+		user: process.env.MAIL_SENDER,
+		pass: process.env.MAIL_TOKEN,
 	},
-	secure: true,
+	secure: false,
+	tls: {
+		rejectUnauthorized: false
+	}
 })
 
 export async function POST(request) {
+
 	const {
 		name,
 		subject,
@@ -21,8 +24,8 @@ export async function POST(request) {
 	} = await request.json()
 
 	const MAIL_OPTIONS = {
-		from: process.env.SENDER,
-		to: process.env.RECEIVER,
+		from: process.env.MAIL_SENDER,
+		to: process.env.MAIL_RECEIVER,
 		subject: `from: ${name}, about: ${subject}`,
 		text: message,
 	}
