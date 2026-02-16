@@ -18,8 +18,7 @@ export default function Projects({ className = '' }) {
 	useEffect(() => {
 		// Wait for layout to settle after resize
 		requestAnimationFrame(() => {
-			const newDragLimit = SCROLL_REF.current.offsetWidth - SCROLL_REF.current.scrollWidth - 16
-			setDragLimit(newDragLimit)
+			setDragLimit(SCROLL_REF.current.offsetWidth - SCROLL_REF.current.scrollWidth - 16)
 			x.set(0)
 		})
 	}, [WINDOW_WIDTH])
