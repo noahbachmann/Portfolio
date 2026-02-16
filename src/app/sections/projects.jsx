@@ -16,7 +16,12 @@ export default function Projects({ className = '' }) {
 	const SLIDE_DISTANCE = 328
 
 	useEffect(() => {
-		setDragLimit(SCROLL_REF.current.offsetWidth - SCROLL_REF.current.scrollWidth - 16)
+		// Wait for layout to settle after resize
+		requestAnimationFrame(() => {
+			const newDragLimit = SCROLL_REF.current.offsetWidth - SCROLL_REF.current.scrollWidth - 16
+			setDragLimit(newDragLimit)
+			x.set(0)
+		})
 	}, [WINDOW_WIDTH])
 
 	const BAR_SIZE = useTransform(x, [-50, dragLimit+50], [0.05, 1])
