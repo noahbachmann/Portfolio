@@ -16,22 +16,6 @@
 		}
 	},
 	{
-		"title": "Claimspartner CH",
-		"description": "Early on in my career, I got the chance to create a website for Claimspartner CH, a swiss insurance company. It was very interesting to lead this project and I gained a lot of experience.",
-		"images": [
-			"/projects/claimspartner.webp"
-		],
-		"topics": [
-			"HTML",
-			"TailwindCSS",
-			"JavaScript",
-			"Frontend Development"
-		],
-		"links": {
-			"Claimspartner.ch": "https://www.claimspartner.ch"
-		}
-	},
-	{
 		"title": "WordPress",
 		"description": "As an apprentice, I worked on a lot of WordPress projects. I learned how to utilize and create custom themes, plugins and Gutenberg blocks.",
 		"images": [
