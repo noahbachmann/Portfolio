@@ -5,10 +5,10 @@ import { GitHub, Instagram, Twitter, LinkedIn } from '@svg'
 
 
 const ICONS = {
-  github: GitHub,
-  instagram: Instagram,
-  twitter: Twitter,
-  linkedin: LinkedIn,
+	github: GitHub,
+	instagram: Instagram,
+	twitter: Twitter,
+	linkedin: LinkedIn,
 }
 
 export default function SocialLink({ social, url, aria }){

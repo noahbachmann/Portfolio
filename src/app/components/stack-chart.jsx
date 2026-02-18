@@ -3,18 +3,18 @@ import min from 'lodash/min'
 import { useRef, useEffect } from 'react'
 import { useWindowWidth } from '@react-hook/window-size'
 import {
-  Chart,
-  DoughnutController,
-  ArcElement,
-  Tooltip,
-  Legend,
+	Chart,
+	DoughnutController,
+	ArcElement,
+	Tooltip,
+	Legend,
 } from 'chart.js'
 
 Chart.register(
-  DoughnutController,
-  ArcElement,
-  Tooltip,
-  Legend,
+	DoughnutController,
+	ArcElement,
+	Tooltip,
+	Legend,
 )
 
 const COLORS = [
@@ -241,7 +241,7 @@ export default function StackChart(){
 					let delay = 0
 					if(context.type === 'data' && context.mode === 'default' && !delayed){
 						const total = context.chart.data.datasets[0].data.length
-    					delay = (total - 1 - context.dataIndex) * 200
+						delay = (total - 1 - context.dataIndex) * 200
 					}
 					return delay
 				},

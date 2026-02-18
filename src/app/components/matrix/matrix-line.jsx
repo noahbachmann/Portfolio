@@ -21,7 +21,7 @@ export default function MatrixLine({  xPos = 0, yPos = 25, size = 0.5, text = '1
 			fontSize={ size }
 			lineHeight={ 1.05 }
 			overflowWrap="break-word">
-				{ text }
+			{ text }
 		</Text>
 	)
 }
