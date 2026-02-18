@@ -20,8 +20,8 @@ export default function ContactInfo({ tabNum, onQrClick }) {
 
 						<span className="h6">E-Mail</span>
 						<Link
-							url="mailto:noah.bachmann@kauz.ch"
-							name="noah.bachmann@kauz.ch"/>
+							url="mailto:public@noahbachmann.ch"
+							name="public@noahbachmann.ch"/>
 
 
 						<span className="h6">Download Contact</span>
