@@ -39,7 +39,7 @@ export default function Projects({ className = '' }) {
 		<div id="projects" className={ `w-full min-h-full ${className}` }>
 			<div
 				ref={ SCROLL_REF }
-				className="px-8 md:px-32 py-48 md:py-96 sticky top-0 flex flex-col gap-24 justify-center overflow-hidden hover:cursor-grab active:cursor-grabbing">
+				className="px-8 md:px-32 py-48 md:py-96 sticky top-0 flex flex-col gap-24 justify-center overflow-hidden active:cursor-grabbing">
 
 				<motion.div
 					drag="x"
@@ -47,7 +47,7 @@ export default function Projects({ className = '' }) {
 					dragElastic={ 0.1 }
 					dragTransition={ { bounceStiffness: 300, bounceDamping: 15 } }
 					style={{ x }}
-					className=" flex gap-24">
+					className="flex gap-24 hover:cursor-grab">
 
 					{ data.map((project, index) => (
 						<ProjectCard
@@ -56,33 +56,33 @@ export default function Projects({ className = '' }) {
 					))}
 				</motion.div>
 
-			<div className="container-sm w-full h-12 self-center rounded-xl flex items-center gap-6">
-				<button
-					onClick={ handleSlideLeft }
-					className="text-primary hover:opacity-70 transition-opacity hover:cursor-pointer"
-					aria-label="Slide left">
-					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="4" stroke="currentColor" className="size-14">
-						<path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-					</svg>
-				</button>
+				<div className="container-sm w-full h-12 self-center rounded-xl flex items-center gap-6">
+					<button
+						onClick={ handleSlideLeft }
+						className="text-primary hover:opacity-70 transition-opacity hover:cursor-pointer"
+						aria-label="Slide left">
+						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="4" stroke="currentColor" className="size-14">
+							<path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+						</svg>
+					</button>
 
-				<div className="flex-grow h-full overflow-hidden rounded-xl">
-					<motion.div
-						style={{ scaleX: BAR_SIZE, originX: 0, left:0 }}
-						initial="hidden"
-						whileInView="visible"
-						margin="200px 0px 24px 0px"
-						className="h-full bg-primary" />
-				</div>
+					<div className="flex-grow h-full overflow-hidden rounded-xl">
+						<motion.div
+							style={{ scaleX: BAR_SIZE, originX: 0, left:0 }}
+							initial="hidden"
+							whileInView="visible"
+							margin="200px 0px 24px 0px"
+							className="h-full bg-primary" />
+					</div>
 
-				<button
-					onClick={ handleSlideRight }
-					className="flex-shrink-0 text-primary hover:opacity-70 transition-opacity hover:cursor-pointer"
-					aria-label="Slide right">
-					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="4" stroke="currentColor" className="size-14">
-						<path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5L15.75 12l-7.5 7.5" />
-					</svg>
-				</button>
+					<button
+						onClick={ handleSlideRight }
+						className="flex-shrink-0 text-primary hover:opacity-70 transition-opacity hover:cursor-pointer"
+						aria-label="Slide right">
+						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="4" stroke="currentColor" className="size-14">
+							<path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5L15.75 12l-7.5 7.5" />
+						</svg>
+					</button>
 				</div>
 			</div>
 		</div>
