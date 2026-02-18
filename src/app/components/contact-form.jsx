@@ -47,11 +47,19 @@ export default function ContactForm(){
 				placeholder="Subject"
 				{...register('subject', { maxLength:50 })} />
 
-			<textarea
-				className={ `h-[55%] resize-none ${ errors.message ? 'error' : '' }` }
-				type="text"
-				placeholder="Your message..."
-				{ ...register('message', { required: true, maxLength:200 })}/>
+			<div className="relative h-[55%]">
+				<textarea
+					className={ `h-full w-full resize-none ${ errors.message ? 'error' : '' }` }
+					type="text"
+					placeholder="Your message..."
+					{ ...register('message', { required: true, maxLength: 250 }) }
+				/>
+				{ errors.message?.type === 'maxLength' && (
+					<span className="absolute bottom-2 right-10 text-xs text-red-600 pointer-events-none bg-white/80 px-1 rounded">
+						max. 250 characters
+					</span>
+				)}
+			</div>
 
 			<SubmitButton text="Send" loading={ isLoading } disabled={ isDisabled } sent={ isSent } />
 		</form>

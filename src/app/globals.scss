@@ -121,3 +121,15 @@ a {
 .error {
 	@apply border-red-600 border-1 border-l-6;
 }
+
+textarea::-webkit-scrollbar {
+    @apply w-6;
+}
+
+textarea::-webkit-scrollbar-track {
+    @apply rounded-full bg-white;
+}
+
+textarea::-webkit-scrollbar-thumb {
+    @apply bg-secondary hover:bg-accent rounded-full hover:cursor-pointer;
+}
