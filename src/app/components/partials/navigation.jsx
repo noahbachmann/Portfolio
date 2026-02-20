@@ -62,9 +62,9 @@ export default function Navigation({ className='' }) {
 
 					<nav
 						id="navlist"
-        				data-visible={ isVisible }>
+						data-visible={ isVisible }>
 
-						<ul className="flex max-md:flex-col gap-4 md:gap-40">
+						<ul className="flex gap-6 max-md:pl-4 max-md:flex-col md:gap-40">
 							<li className="hover-up">
 								<Link
 									href="#projects"
