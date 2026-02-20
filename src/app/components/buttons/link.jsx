@@ -19,50 +19,50 @@ export default function CustomLink({ url, name, index = 1, download = false }) {
 
 	return(
 		<>
-		{
-			!download ?
-				<Link
-					href={ url }
-					target="_blank"
-					rel="noopener"
-					className="-mt-4 block">
-					<motion.div
-						key={ index }
-						variants={ VARIANTS }
-						initial="rest"
-						animate="rest"
-						whileHover="hover"
-						whileTap="active"
-						transition={{ ease: 'easeIn', duration: 0.2 }}
-						className="flex font-semibold text-secondary hover:text-accent active:text-white">
+			{
+				!download ?
+					<Link
+						href={ url }
+						target="_blank"
+						rel="noopener"
+						className="-mt-4 block">
+						<motion.div
+							key={ index }
+							variants={ VARIANTS }
+							initial="rest"
+							animate="rest"
+							whileHover="hover"
+							whileTap="active"
+							transition={{ ease: 'easeIn', duration: 0.2 }}
+							className="flex font-semibold text-secondary hover:text-accent active:text-white">
 
-						<motion.div className="w-20 h-auto flex items-center" variants={ ARROW_VARIANTS }>
+							<motion.div className="w-20 h-auto flex items-center" variants={ ARROW_VARIANTS }>
 								<Arrows />
+							</motion.div>
+							{ name }
 						</motion.div>
-						{ name }
-					</motion.div>
-				</Link>
-				:
-				<a
-					href={ url }
-					className="-mt-4 block">
-					<motion.div
-						key={index}
-						variants={ VARIANTS }
-						initial="rest"
-						animate="rest"
-						whileHover="hover"
-						whileTap="active"
-						transition={{ ease: 'easeIn', duration: 0.2 }}
-						className="flex font-semibold text-secondary hover:text-accent active:text-white">
+					</Link>
+					:
+					<a
+						href={ url }
+						className="-mt-4 block">
+						<motion.div
+							key={index}
+							variants={ VARIANTS }
+							initial="rest"
+							animate="rest"
+							whileHover="hover"
+							whileTap="active"
+							transition={{ ease: 'easeIn', duration: 0.2 }}
+							className="flex font-semibold text-secondary hover:text-accent active:text-white">
 
-						<motion.div className="w-20 h-auto flex items-center" variants={ ARROW_VARIANTS }>
+							<motion.div className="w-20 h-auto flex items-center" variants={ ARROW_VARIANTS }>
 								<Download />
+							</motion.div>
+							{ name }
 						</motion.div>
-						{ name }
-					</motion.div>
-				</a>
-		}
+					</a>
+			}
 		</>
 	)
 }

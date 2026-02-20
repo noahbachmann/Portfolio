@@ -8,10 +8,10 @@ export default function MatrixCanvas() {
 	useEffect(() => setMounted(true), [])
 
 	return mounted ?
-	(
-		<Canvas orthographic camera={{ zoom: 20, position: [0, 0, 10] }} resize={{ scroll: false }}>
-			<Matrix />
-		</Canvas>
-	)
-	: null
+		(
+			<Canvas orthographic camera={{ zoom: 20, position: [0, 0, 10] }} resize={{ scroll: false }}>
+				<Matrix />
+			</Canvas>
+		)
+		: null
 }
